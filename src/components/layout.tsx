@@ -21,11 +21,11 @@ export const Layout = ({ children }: Props) => {
     }
   `)
   return (
-    <React.Fragment>
+    <LayoutContainer>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>{children}</Content>
       <Footer />
-    </React.Fragment>
+    </LayoutContainer>
   )
 }
 
@@ -34,6 +34,13 @@ Layout.propTypes = {
 }
 
 const Content = styled.div`
-  display: grid;
-  grid-template-columns: minmax(25px, 1fr) minmax(0, 70%) minmax(25px, 1fr);
+overflow-y: scroll;
+display: grid;
+grid-template-columns: var(--grid-columns);
+`
+
+const LayoutContainer = styled.div`
+min-height: 100vh;
+display: grid;
+grid-template-rows: auto 1fr auto;
 `

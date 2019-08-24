@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Who Template Starter`,
+    title: `Visceral Visuals Meta Data`,
     description: `Basic Gatsby template including Typescript, MobX, Styled Components and Gatsby image utilities`,
     author: `Who Media`,
   },

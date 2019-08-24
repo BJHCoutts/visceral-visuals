@@ -5,6 +5,7 @@
   --display-font: "Dancing Script", cursive;
   --menu-font: "Roboto", sans-serif;
   --body-font: "Josefin Sans", sans-serif;
+  --grid-columns: minmax(25px, 1fr) minmax(0, 70%) minmax(25px, 1fr);
 }
 
 * {
@@ -14,9 +15,9 @@
   padding: 0;
 }
 
-body {
+/* body {
   overflow-y: scroll;
-}
+} */
 
 a {
   color: inherit;

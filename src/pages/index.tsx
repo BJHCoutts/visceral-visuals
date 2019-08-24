@@ -2,68 +2,31 @@ import * as React from "react"
 
 import styled from "styled-components"
 
-import { BlogPosts } from "../components/blog-posts/blog-posts"
-import { Carousel } from "../components/carousel/carousel"
+import { ExpansionPanel } from "../components/mediumSelect/expansion-panel"
 import { Head } from "../components/head"
 import { Layout } from "../components/layout"
 import SEO from "../components/seo"
-import { About } from "../components/about/about"
-import { Follow } from "../components/follow/follow"
-import { EmailSignup } from "../components/email-signup"
-import { SearchBar } from "../components/search-bar"
 
 const IndexPage = () => {
   return (
-    <React.Fragment>
+    <AppContainer>
       <SEO title="Home" />
-      <Head title={"Index Page"} />
+      <Head title={"Visceral Visuals Component Props"} />
       <Layout>
-        <Carousel />
-        <MobileBodyContainer>
-          <BlogPosts />
-          <About />
-          <Follow />
-          <EmailSignup />
-          <SearchBar />
-        </MobileBodyContainer>
-
-        <DesktopBodyContainer>
-          <DesktopBody>
-            <div>
-              <BlogPosts />
-            </div>
-            <div>
-              <About />
-              <Follow />
-              <EmailSignup />
-              <SearchBar />
-            </div>
-          </DesktopBody>
-        </DesktopBodyContainer>
-      </Layout>
-    </React.Fragment>
+      <Content>
+        <ExpansionPanel/>
+      </Content>
+      </Layout>      
+    </AppContainer>
   )
 }
 
-const DesktopBody = styled.div`
-  display: none;
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 2rem;
-  }
-`
-const DesktopBodyContainer = styled.div`
-  @media (min-width: 768px) {
-    grid-column: 2;
-  }
+const Content = styled.div`
+grid-column: 2;
 `
 
-const MobileBodyContainer = styled.div`
-  grid-column: 2;
-  @media (min-width: 768px) {
-    display: none;
-  }
+const AppContainer = styled.div`
+ height: 100%;
 `
 
 export default IndexPage
