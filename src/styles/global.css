@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Josefin+Sans|Roboto:100&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
 
 :root {
   --shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.075);
-  --display-font: "Dancing Script", cursive;
-  --menu-font: "Roboto", sans-serif;
-  --body-font: "Josefin Sans", sans-serif;
+  --display-font: 'Amatic SC', cursive;
+  --menu-font: 'Amatic SC', cursive;
+  --body-font: 'Amatic SC', cursive;
   --grid-columns: minmax(25px, 1fr) minmax(0, 70%) minmax(25px, 1fr);
 }
 
 * {
-  font-family: var(--body-font);
+  font-family: 'Amatic SC', cursive;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

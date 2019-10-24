@@ -34,10 +34,11 @@ export const Layout = ({ children }: Props) => {
 
   return (
     <LayoutContainer>
-      <BackgroundImage fluid={bgImagePath}></BackgroundImage>
+      <BackgroundImage fluid={bgImagePath} style={{height: "100%"}}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>{children}</Content>
       <Footer />
+    </BackgroundImage>
     </LayoutContainer>
   )
 }
