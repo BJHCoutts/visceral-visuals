@@ -6,7 +6,7 @@ import { MobileMenu } from "./mobile-menu"
 
 import searchIcon from "../../icons/baseline-search-24px-white.svg"
 import hamburger from "../../icons/baseline-menu-24px.svg"
-import VVLogo from "../../images/VVLogo.svg"
+import VVLogo from "../../logos/GearsFeather.svg"
 
 interface Props {
   siteTitle: string
