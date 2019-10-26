@@ -7,14 +7,16 @@ import { Head } from "../components/head"
 import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 
+import { MainMenu } from "../components/main-menu/main-menu"
+
 const IndexPage = () => {
   return (
     <AppContainer>
-      <SEO title="Home" />
-      <Head title={"Visceral Visuals Component Props"} />
+      <SEO title="Visceral Visuals digital art design" />
+      <Head title={"Visceral Visuals"} />
       <Layout>
       <Content>
-        <ExpansionPanel/>
+        <MainMenu/>
       </Content>
       </Layout>      
     </AppContainer>
@@ -26,7 +28,7 @@ grid-column: 2;
 `
 
 const AppContainer = styled.div`
- height: 100%;
+  height: 100vh;
 `
 
 export default IndexPage

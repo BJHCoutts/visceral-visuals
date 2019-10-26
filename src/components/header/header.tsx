@@ -13,21 +13,6 @@ interface Props {
 }
 
 export const Header = ({ siteTitle }: Props) => {
-  const [searchInputValue, setSearchInputValue] = React.useState("")
-  const [searchInputDisplay, setSearchInputdisplay] = React.useState(
-    "scaleX(0)"
-  )
-  const [maxHeight, setMaxHeight] = React.useState("0")
-
-  let SearchInput = styled.input`
-    border-style: none;
-    border-bottom: solid 1px slategrey;
-    background: none;
-    outline: none;
-    width: 80%;
-    font: 0.95rem/1rem sans-serif;
-    transform: ${searchInputDisplay};
-  `
 
   return (
     <Container>
@@ -41,11 +26,12 @@ export const Header = ({ siteTitle }: Props) => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
+  justify-items:center;
 `
 
 const Content = styled.div`
   grid-column: 2;
-  padding: 50px 0;
+  padding: 0;
 `
 
 const LogoImg = styled.img`

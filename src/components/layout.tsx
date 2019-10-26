@@ -48,13 +48,10 @@ Layout.propTypes = {
 }
 
 const Content = styled.div`
-overflow-y: scroll;
 display: grid;
 grid-template-columns: var(--grid-columns);
 `
 
 const LayoutContainer = styled.div`
-min-height: 100vh;
-display: grid;
-grid-template-rows: minmax(25px, 1fr) minmax(0, 768px) minmax(25px, 1fr);
+height: 100%;
 `

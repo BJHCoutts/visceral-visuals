@@ -21,4 +21,8 @@ const FooterContent = styled.footer`
   display: grid;
   grid-template-columns: var(--grid-columns);
   padding: 25px 0;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
 `
