@@ -6,6 +6,7 @@ export const Footer = () => {
     <FooterContent>
       <Content>
         <a href="mailto:bjhcoutts@gmail.com">bjhcoutts@gmail.com</a>
+        <span>BG Photo by okeykat on Unsplash</span>
       </Content>
     </FooterContent>
   )
