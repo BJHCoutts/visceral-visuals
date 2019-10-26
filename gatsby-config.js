@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Visceral Visuals Meta Data`,
-    description: `Basic Gatsby template including Typescript, MobX, Styled Components and Gatsby image utilities`,
-    author: `Who Media`,
+    title: `Visceral Visuals by Brian Coutts`,
+    description: `Visceral Visuals by Brian Coutts, art, design and illustration`,
+    author: `Brian Coutts`,
   },
   plugins: [
     {
