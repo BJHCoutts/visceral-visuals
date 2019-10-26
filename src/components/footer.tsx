@@ -15,6 +15,8 @@ export const Footer = () => {
 const Content = styled.div`
   color: white;
   grid-column: 2;
+  display: flex;
+  justify-content: space-between;
 `
 
 const FooterContent = styled.footer`
