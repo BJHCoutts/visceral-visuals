@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const MainMenu = () => {
 	return(
 		<Container>
-		<MenuItem>Etherial</MenuItem>
+		<MenuItem>Ethereal</MenuItem>
 		<MenuItem>Tangible</MenuItem>
 		<MenuItem>Design</MenuItem>
 		</Container>
