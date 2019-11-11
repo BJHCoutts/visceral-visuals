@@ -8,6 +8,7 @@ import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 
 import { MainMenu } from "../components/main-menu/main-menu"
+import { APITest } from "../components/api-test/api-test"
 
 const IndexPage = () => {
   return (
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <Head title={"Visceral Visuals"} />
       <Layout>
       <Content>
+        <APITest/>
         <MainMenu/>
       </Content>
       </Layout>      
