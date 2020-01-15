@@ -14,10 +14,10 @@ const IndexPage: React.FC = () => {
       <SEO title="Visceral Visuals digital art and design" />
       <Head title={"Visceral Visuals"} />
       <Layout>
-      <Content>
-        {/* <APITest/> */}
-        <MainMenu/>
-      </Content>
+        <Content>
+          {/* <APITest/> */}
+          <MainMenu/>
+        </Content>
       </Layout>      
     </AppContainer>
   )

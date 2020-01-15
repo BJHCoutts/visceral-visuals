@@ -48,10 +48,10 @@ Layout.propTypes = {
 }
 
 const Content = styled.div`
-display: grid;
-grid-template-columns: var(--grid-columns);
+  display: grid;
+  grid-template-columns: var(--grid);
 `
 
 const LayoutContainer = styled.div`
-height: 100%;
+  height: 100%;
 `

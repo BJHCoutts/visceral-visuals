@@ -7,6 +7,8 @@ import { MobileMenu } from "./mobile-menu"
 import searchIcon from "../../icons/baseline-search-24px-white.svg"
 import hamburger from "../../icons/baseline-menu-24px.svg"
 import VVLogo from "../../logos/GearsFeather.svg"
+import { SectionContainer, SectionContent } from "../shared/containers"
+import { breakPoints } from "../shared/break-points"
 
 interface Props {
   siteTitle: string
@@ -15,11 +17,11 @@ interface Props {
 export const Header = ({ siteTitle }: Props) => {
 
   return (
-    <Container>
-      <Content>
-       <LogoImg src={VVLogo}/>
-       </Content>
-    </Container>
+    <SectionContainer>
+      <SectionContent>
+        <LogoImg src={VVLogo}/>
+       </SectionContent>
+    </SectionContainer>
   )
 }
 
@@ -33,19 +35,13 @@ const fadeIn = keyframes`
   }
 `
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: var(--grid-columns);
-  justify-items:center;
-`
-
-const Content = styled.div`
-  grid-column: 2;
-  padding: 0;
-`
-
 const LogoImg = styled.img`
-  width:300px;
+  display:block;
+  width:100%;
   height:auto;
   animation: ${fadeIn} 1s ease-in;
+  margin: 0 auto;
+  @media (min-width: ${breakPoints.tablet}){
+    max-width: 300px;
+  }
 `
