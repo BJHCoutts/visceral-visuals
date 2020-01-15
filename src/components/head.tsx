@@ -6,7 +6,7 @@ interface Props {
   title: string
 }
 
-export const Head = (props: Props) => {
+export const Head: React.FC<Props> = (props) => {
   const data = useStaticQuery(graphql`
     query {
       site {

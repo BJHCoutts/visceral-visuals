@@ -15,11 +15,8 @@ export const Card = (props: Props) => {
     width: ${props.width};
     overflow: hidden;
     background-color: rgba(245, 245, 245, 0.8);
-    padding: 1.5rem;
-    margin-bottom: 25px;
-    :last-of-type {
-      margin-bottom: 100px;
-    }
+    padding: 25px;
+    margin-bottom: 50px;
   `
   return <Container>{props.children}</Container>
 }

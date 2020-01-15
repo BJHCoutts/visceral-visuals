@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Carousel</title>
+	<link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+	<div class="carousel">
+		<button class="carousel__button--left carousel__button is-hidden"><</button>
+		<div class="carousel__track-container">
+			<ul class="carousel__track">
+
+				<li class="carousel__slide current-slide" id="0">
+					<img src="images/jump.jpg" class="carousel__image" alt="taking the plunge"/>
+				</li>
+
+				<li class="carousel__slide" id="1">
+					<img src="images/jump.jpg" class="carousel__image" alt="taking the plunge"/>
+				</li>
+
+				<li class="carousel__slide" id="2">
+					<img src="images/jump.jpg" class="carousel__image" alt="taking the plunge"/>
+				</li>
+
+			</ul>
+		</div>
+		<button class="carousel__button--right carousel__button">></button>
+
+		<div class="carousel__nav">
+			<button class="carousel__indicator current-slide"></button>
+			<button class="carousel__indicator"></button>
+			<button class="carousel__indicator"></button>
+		</div>
+	</div>
+</body>
+<script src="js/index.js"></script>
+</html>

@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import * as React from "react"
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 
 import { MobileMenu } from "./mobile-menu"
 
@@ -23,6 +23,16 @@ export const Header = ({ siteTitle }: Props) => {
   )
 }
 
+
+const fadeIn = keyframes`
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+`
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
@@ -37,4 +47,5 @@ const Content = styled.div`
 const LogoImg = styled.img`
   width:300px;
   height:auto;
+  animation: ${fadeIn} 1s ease-in;
 `

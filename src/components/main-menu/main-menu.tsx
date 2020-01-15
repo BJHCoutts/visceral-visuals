@@ -4,6 +4,7 @@ import styled from 'styled-components'
 export const MainMenu = () => {
 	return(
 		<Container>
+			<h2>This site is currently a lovingly WIP</h2>
 		<MenuItem>Ethereal</MenuItem>
 		<MenuItem>Tangible</MenuItem>
 		<MenuItem>Design</MenuItem>
