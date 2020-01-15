@@ -28,7 +28,10 @@ grid-column: 2;
 `
 
 const AppContainer = styled.div`
-  height: 100vh;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
 `
 
 export default IndexPage

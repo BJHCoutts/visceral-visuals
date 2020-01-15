@@ -1,18 +1,21 @@
 import React from "react";
 import styled from 'styled-components'
+import { SectionContainer, SectionContent } from "../shared/containers";
 
 export const MainMenu = () => {
 	return(
-		<Container>
-			<h2>This site is currently a lovingly WIP</h2>
-			<nav>
-				<NavList>
-					<MenuItem>Ethereal</MenuItem>
-					<MenuItem>Tangible</MenuItem>
-					<MenuItem>Design</MenuItem>
-				</NavList>
-			</nav>
-		</Container>
+		<SectionContainer>
+			<SectionContent>
+				<h2>This site is currently a lovingly WIP</h2>
+				<nav>
+					<NavList>
+						<MenuItem>Ethereal</MenuItem>
+						<MenuItem>Tangible</MenuItem>
+						<MenuItem>Design</MenuItem>
+					</NavList>
+				</nav>
+			</SectionContent>
+		</SectionContainer>
 	)
 }
 

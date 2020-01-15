@@ -3,29 +3,28 @@ import styled from "styled-components"
 
 export const Footer: React.FC = () => {
   return (
-    <FooterContent>
-      <Content>
+    <FooterContainer>
+      <FooterContent>
         <a href="mailto:bjhcoutts@gmail.com">bjhcoutts@gmail.com</a>
         <span>BG Photo by okeykat on Unsplash</span>
-      </Content>
-    </FooterContent>
+      </FooterContent>
+    </FooterContainer>
   )
 }
+const FooterContainer = styled.footer`
+  background-color: black;
+  display: grid;
+  grid-template-columns: var(--grid);
+  padding: 25px 0;
+  position:sticky;
+  bottom:0;
+  left:0;
+  right:0;
+`
 
-const Content = styled.div`
+const FooterContent = styled.div`
   color: white;
   grid-column: 2;
   display: flex;
   justify-content: space-between;
-`
-
-const FooterContent = styled.footer`
-  background-color: black;
-  display: grid;
-  grid-template-columns: var(--grid-columns);
-  padding: 25px 0;
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
 `
