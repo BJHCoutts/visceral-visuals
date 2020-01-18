@@ -72,15 +72,23 @@ const ButtonNext = styled.button`
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
+	color: var(--white);
+	background-color: var(--black);
+	border-radius: 50%;
+	padding:10px;
 	right: -40px;
-`
+	`
 const ButtonPrev = styled.button`
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
+	color: var(--white);
+	background-color: var(--black);
+	border-radius: 50%;
+	padding:10px;
 	left: -40px;
-`
+	`
 
 const CarouselContainer = styled.div`
 	position: relative;
