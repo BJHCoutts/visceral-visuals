@@ -28,7 +28,6 @@ export const Carousel: React.FC<Props> = (props) => {
 	return(
 		<SectionContainer>
 			<SectionContent>
-				<h1> Carousel </h1>
 				<CarouselContainer>
 					<ButtonPrev>
 						{"<"}
@@ -38,7 +37,9 @@ export const Carousel: React.FC<Props> = (props) => {
 						<Track>
 						{data.allImageSharp.edges.map(edge => {
         			return (
-								<Img fluid={edge.node.fluid} />
+								<Slide>
+									<SlideImage fluid={edge.node.fluid} />
+								</Slide>
 							)
 						}
       			)}
@@ -48,6 +49,16 @@ export const Carousel: React.FC<Props> = (props) => {
 					<ButtonNext>
 						{">"}
 					</ButtonNext>
+
+					<Nav>
+					{data.allImageSharp.edges.map(edge => {
+        			return (
+								<NavIndicator/>
+							)
+						}
+      			)}
+					</Nav>
+
 				</CarouselContainer>
 
 
@@ -76,6 +87,34 @@ const CarouselContainer = styled.div`
 	height: 600px;
 	width: 80%;
 	margin: 0 auto;
+`
+
+const Nav = styled.div`
+	display:flex;
+	justify-content: center;
+`
+
+const NavIndicator = styled.button`
+	border:0;
+	border-radius: 50%;
+	width: 15px; 
+	height:15px;
+	margin: 0 12px;
+	background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+`
+
+const Slide = styled.li`
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+`
+
+const SlideImage = styled(Img)`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 `
 
 const Track = styled.ul`
