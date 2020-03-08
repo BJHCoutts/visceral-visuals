@@ -10,24 +10,17 @@ import { MainMenu } from "../components/main-menu/main-menu"
 import { Carousel } from "../components/shared/carousel/carousel"
 
 const IndexPage: React.FC = () => {
+
   return (
     <AppContainer>
       <SEO title="Visceral Visuals digital art and design" />
       <Head title={"Visceral Visuals"} />
       <Layout>
-        <Content>
-          {/* <APITest/> */}
-          <Carousel/>
-          <MainMenu/>
-        </Content>
+        <MainMenu/>
       </Layout>      
     </AppContainer>
   )
 }
-
-const Content = styled.div`
-grid-column: 2;
-`
 
 const AppContainer = styled.div`
   top:0;

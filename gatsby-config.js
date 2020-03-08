@@ -3,6 +3,9 @@ module.exports = {
     title: `Visceral Visuals by Brian Coutts`,
     description: `Visceral Visuals by Brian Coutts, art, design and illustration`,
     author: `Brian Coutts`,
+    phoneDisplay: `CHANGME`,
+    phoneLink: `CHANGME`,
+    email: `hello@CHANGME.com`,
   },
   plugins: [
     {
@@ -10,6 +13,27 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `design`,
+        path: `${__dirname}/src/images/design`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `digital`,
+        path: `${__dirname}/src/images`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `physical`,
+        path: `${__dirname}/src/images/physical`
       },
     },
     `gatsby-image`,
