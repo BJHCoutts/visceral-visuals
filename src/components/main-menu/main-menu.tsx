@@ -39,7 +39,8 @@ export const MainMenu = () => {
 					<NavList>
 						<MenuItem>Ethereal</MenuItem>
 						<Carousel>
-							{digitalImages.edges.map((image,i) => <Img key={i} fluid={image.node.childImageSharp.fluid} style={{height: "100px", width: "100px"}}/>)}
+							{digitalImages.edges}
+							{/* {digitalImages.edges.map((image,i) => <Img key={i} fluid={image.node.childImageSharp.fluid} style={{height: "100px", width: "100px"}}/>)} */}
           	</Carousel>
 						<MenuItem>Tangible</MenuItem>
 						<MenuItem>Design</MenuItem>
