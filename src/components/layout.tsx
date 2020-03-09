@@ -34,11 +34,11 @@ export const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <LayoutContainer>
-      <BackgroundImage fluid={bgImagePath} style={{height: "100%"}}>
+      <ParallaxBgImg fluid={bgImagePath} style={{height: "100%"}}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>{children}</Content>
       <Footer />
-    </BackgroundImage>
+    </ParallaxBgImg>
     </LayoutContainer>
   )
 }
@@ -54,4 +54,22 @@ const Content = styled.div`
 
 const LayoutContainer = styled.div`
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+`
+
+const ParallaxBgImg = styled(BackgroundImage)`
+  background-attachment: fixed;
+  position: relative;
+  height: 100%;
+  /* &::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    z-index: -1; */
+  }
 `

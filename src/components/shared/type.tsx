@@ -25,7 +25,7 @@ export const ExternalLink = styled.a.attrs(props => ({
 export const Header = styled.h1`
   color: var(--black);
   margin-bottom: .75rem;
-  font-size: 1.5rem;
+  font-size: 2em;
 `
 
 export const HeaderCenter = styled(Header)`

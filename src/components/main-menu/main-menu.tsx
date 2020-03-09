@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
 import { Carousel } from "../shared/carousel/carousel";
+import { SubHeader } from "../shared/type";
 
 
 export const MainMenu = () => {
@@ -34,7 +35,7 @@ export const MainMenu = () => {
 	return(
 		<SectionContainer>
 			<SectionContent>
-				<h2>This site is currently a lovingly WIP</h2>
+				<SubHeader>This site is currently a lovingly WIP</SubHeader>
 				<nav>
 					<NavList>
 						<Carousel title="Ethereal">

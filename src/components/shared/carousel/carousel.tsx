@@ -101,11 +101,11 @@ interface IContainerMain {
 }
 
 const ContainerMain = styled.div<IContainerMain>`
-	max-height: ${props => props.open? "1000px": "0px"};
+	max-height: ${props => props.open? "800px": "0px"};
 	width:300px;
 	margin: 0 auto;
 	overflow: hidden;
-	transition: all .9s ease-in;
+	transition: all .9s ease-in-out;
 `
 
 const ContainerTop = styled.div`
