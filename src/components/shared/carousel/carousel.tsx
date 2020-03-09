@@ -103,7 +103,7 @@ const ContainerMain = styled.div<IContainerMain>`
 	max-height: ${props => props.open? "800px": "0px"};
 	width:300px;
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: ${props => props.open? "show": "hidden"};
 	transition: all .9s ease-in-out;
 `
 
