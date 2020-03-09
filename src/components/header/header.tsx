@@ -1,11 +1,11 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import * as React from "react"
 import styled, {keyframes} from "styled-components"
 
-import { MobileMenu } from "./mobile-menu"
+// import { MobileMenu } from "./mobile-menu"
 
-import searchIcon from "../../icons/baseline-search-24px-white.svg"
-import hamburger from "../../icons/baseline-menu-24px.svg"
+// import searchIcon from "../../icons/baseline-search-24px-white.svg"
+// import hamburger from "../../icons/baseline-menu-24px.svg"
 import VVLogo from "../../logos/GearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"

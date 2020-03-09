@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 
 import { MainMenu } from "../components/main-menu/main-menu"
 // import { APITest } from "../components/api-test/api-test"
-import { Carousel } from "../components/shared/carousel/carousel"
 
 const IndexPage: React.FC = () => {
 

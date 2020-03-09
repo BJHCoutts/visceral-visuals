@@ -15,13 +15,6 @@ module.exports = {
         path: `${__dirname}/src/images`
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `design`,
-        path: `${__dirname}/src/images/design`
-      },
-    },
     `gatsby-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,

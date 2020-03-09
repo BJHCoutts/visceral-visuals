@@ -1,7 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
 import { Carousel } from "../shared/carousel/carousel";
@@ -38,17 +37,17 @@ export const MainMenu = () => {
 				<SubHeader>This site is currently a lovingly WIP</SubHeader>
 				<nav>
 					<NavList>
-						<Carousel title="Ethereal">
-							{digitalImages.edges}
-          	</Carousel>
+            <MenuItem>
+              <Carousel title="Ethereal">
+                {digitalImages.edges}
+              </Carousel>
+            </MenuItem>
 					</NavList>
 				</nav>
 			</SectionContent>
 		</SectionContainer>
 	)
 }
-
-const Container = styled.div``
 
 const MenuItem = styled.li`
 	font-size:2rem;

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
-import { SectionContainer, SectionContent } from '../containers'
 import { Header } from '../type'
 
 interface IProps {
@@ -123,12 +122,6 @@ width: 100%;
 	display: flex;
 	justify-content: space-evenly;
 	padding: 1rem;
-`
-
-const SectionContentCentered = styled(SectionContent)`
-	/* display: flex; */
-	/* flex-direction: column;
-	align-items: center; */
 `
 
 const SlideImg = styled(Img)`
