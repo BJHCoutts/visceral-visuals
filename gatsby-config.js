@@ -22,20 +22,6 @@ module.exports = {
         path: `${__dirname}/src/images/design`
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `digital`,
-        path: `${__dirname}/src/images`
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `physical`,
-        path: `${__dirname}/src/images/physical`
-      },
-    },
     `gatsby-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
