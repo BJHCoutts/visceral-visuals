@@ -2,8 +2,10 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { SectionContainer, SectionContent } from '../containers'
+import { Header } from '../type'
 
 interface IProps {
+	title: string
 	children: JSX.Element[]
 }
 
@@ -13,6 +15,7 @@ interface IButton {
 
 export const Carousel:React.FC<IProps> = (props) => {
 	const [currentSlide, setCurrentSlide] = React.useState(0)
+	const [open, setOpen] = React.useState(false)
 
 	const activeSlide = props.children.map((slide, i) =>
 		<CarouselSlide key={i} active={currentSlide === i}>
@@ -22,7 +25,9 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 	return(
 		<>
-			<Container>
+			<HeaderToggleButton onClick={()=>setOpen(!open)}>{props.title}</HeaderToggleButton>
+			<ContainerMain open={open}>
+			<ContainerTop>
 				<CarouselWrapper>
 					<CarouselSlides currentSlide={currentSlide}>
 						{activeSlide}
@@ -37,8 +42,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 							setCurrentSlide((currentSlide + 1) % activeSlide.length)
 					}}>Next</ButtonNext>
 				</NavButtonContainer>
-			</Container>
-
+			</ContainerTop>
 
 				<ThumbnailConatiner>
 				{	props.children.map((thumbnail, i) =>
@@ -51,6 +55,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 						/>
 				)}
 				</ThumbnailConatiner>
+			</ContainerMain>
 			</>
 	)
 }
@@ -91,9 +96,26 @@ const CarouselWrapper = styled.div`
 	width: 100%;
 `
 
-const Container = styled.div`
+interface IContainerMain {
+	open: boolean
+}
+
+const ContainerMain = styled.div<IContainerMain>`
+	max-height: ${props => props.open? "1000px": "0px"};
 	width:300px;
 	margin: 0 auto;
+	overflow: hidden;
+	transition: all .9s ease-in;
+`
+
+const ContainerTop = styled.div`
+	width:300px;
+	margin: 0 auto;
+`
+
+const HeaderToggleButton = styled(Header)`
+	cursor: pointer;
+	display:inline;
 `
 
 const NavButtonContainer = styled.nav`
