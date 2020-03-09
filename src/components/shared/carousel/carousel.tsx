@@ -22,6 +22,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 	return(
 		<>
+			<Container>
 				<CarouselWrapper>
 					<CarouselSlides currentSlide={currentSlide}>
 						{activeSlide}
@@ -36,6 +37,9 @@ export const Carousel:React.FC<IProps> = (props) => {
 							setCurrentSlide((currentSlide + 1) % activeSlide.length)
 					}}>Next</ButtonNext>
 				</NavButtonContainer>
+			</Container>
+
+
 				<ThumbnailConatiner>
 				{	props.children.map((thumbnail, i) =>
 						<Thumbnail key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
@@ -87,10 +91,15 @@ const CarouselWrapper = styled.div`
 	width: 100%;
 `
 
+const Container = styled.div`
+	width:300px;
+	margin: 0 auto;
+`
+
 const NavButtonContainer = styled.nav`
 width: 100%;
 	display: flex;
-	/* justify-content: space-evenly; */
+	justify-content: space-evenly;
 	padding: 1rem;
 `
 
