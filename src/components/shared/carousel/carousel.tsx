@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { Header } from '../type'
+import { Button } from '../forms'
 
 interface IProps {
 	title: string
@@ -18,7 +19,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 	const activeSlide = props.children.map((slide, i) =>
 		<CarouselSlide key={i} active={currentSlide === i}>
-			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid}/>
+			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{height: "100%"}}/>
 		</CarouselSlide>
 	)
 
@@ -35,11 +36,11 @@ export const Carousel:React.FC<IProps> = (props) => {
 				<NavButtonContainer>
 					<ButtonPrev onClick={() => {
 						setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);
-					}}>Prev</ButtonPrev>
+					}}>{"< Prev"}</ButtonPrev>
 
 					<ButtonNext onClick={() => {
 							setCurrentSlide((currentSlide + 1) % activeSlide.length)
-					}}>Next</ButtonNext>
+					}}>{"Next >"}</ButtonNext>
 				</NavButtonContainer>
 			</ContainerTop>
 
@@ -59,9 +60,9 @@ export const Carousel:React.FC<IProps> = (props) => {
 	)
 }
 
-const ButtonNext = styled.button<IButton>``
+const ButtonNext = styled(Button)<IButton>``
 
-const ButtonPrev = styled.button<IButton>``
+const ButtonPrev = styled(Button)<IButton>``
 
 interface ICarouselSlide {
 	active?: boolean
@@ -88,6 +89,7 @@ const CarouselSlides = styled.div<ICarouselSlides>`
 		`
 	}
 	transition: all 0.5s ease;
+	height: 300px;
 `
 
 const CarouselWrapper = styled.div`
@@ -100,11 +102,12 @@ interface IContainerMain {
 }
 
 const ContainerMain = styled.div<IContainerMain>`
-	max-height: ${props => props.open? "800px": "0px"};
+	max-height: ${props => props.open? "700px": "0px"};
+	overflow: ${props => props.open? "show": "hidden"};
+	opacity: ${props => props.open? "1": "0"};
 	width:300px;
 	margin: 0 auto;
-	overflow: ${props => props.open? "show": "hidden"};
-	transition: all .9s ease-in-out;
+	transition: max-height .8s ease-in, opacity .8s ease-in;
 `
 
 const ContainerTop = styled.div`
@@ -115,6 +118,13 @@ const ContainerTop = styled.div`
 const HeaderToggleButton = styled(Header)`
 	cursor: pointer;
 	display:inline;
+	border: 2px solid var(--black);
+	padding: 0 3px;
+	&:hover{
+		background-color: var(--black);
+		color: var(--white);
+		transition: all .2s ease-in;
+	}
 `
 
 const NavButtonContainer = styled.nav`
@@ -131,6 +141,7 @@ const SlideImg = styled(Img)`
 
 const ThumbnailConatiner = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 `
 
 interface IThumbnail {

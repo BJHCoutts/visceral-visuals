@@ -31,17 +31,21 @@ export const TextArea = styled.textarea`
 `
 
 export const Button = styled.button`
-	color: var(--primary);
-	padding: 10px 50px;
+	color: var(--black);
+	padding: 2px 5px;
+	font-family: var(--display-font);
 	font-size: 1.2rem;
-	background-color: #EAEAEA;
+	background-color: none;
 	border-radius: 6px;
 	font-weight: bold;
 	border: solid 1px #999;
 	cursor: pointer;
 	transition: color .3s ease-in, background-color .2s ease-in;
-	:hover {
-		background-color: var(--primary);
-		color: #EAEAEA
+	&:hover {
+		background-color: var(--black);
+		color: var(--white);
+	}
+	&:focus {
+		outline: none;
 	}
 `
