@@ -19,7 +19,8 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 	const activeSlide = props.children.map((slide, i) =>
 		<CarouselSlide key={i} active={currentSlide === i}>
-			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{height: "100%"}}/>
+			
+			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
 		</CarouselSlide>
 	)
 
@@ -89,7 +90,6 @@ const CarouselSlides = styled.div<ICarouselSlides>`
 		`
 	}
 	transition: all 0.5s ease;
-	height: 300px;
 `
 
 const CarouselWrapper = styled.div`
@@ -137,6 +137,7 @@ width: 100%;
 const SlideImg = styled(Img)`
 	height: 300px;
 	width: 300px;
+
 `
 
 const ThumbnailConatiner = styled.div`

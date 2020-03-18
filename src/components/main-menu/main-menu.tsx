@@ -20,7 +20,7 @@ export const MainMenu = () => {
             node {
               childImageSharp {
                 id
-                fluid(maxWidth: 340, maxHeight: 220) {
+                fluid {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
