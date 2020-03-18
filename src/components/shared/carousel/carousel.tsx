@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { Header } from '../type'
 import { Button } from '../forms'
+import { Modal } from '../modal/modal'
 
 interface IProps {
 	title: string
@@ -16,16 +17,25 @@ interface IButton {
 export const Carousel:React.FC<IProps> = (props) => {
 	const [currentSlide, setCurrentSlide] = React.useState(0)
 	const [open, setOpen] = React.useState(false)
-	const aref = React.createRef()
+	const [active, setActive] = React.useState(false)
+
+	const toggleModal = (e:React.MouseEvent<HTMLDivElement, MouseEvent>):void => {
+		setActive(!active)
+	}
 
 	const activeSlide = props.children.map((slide, i) =>
-		<CarouselSlide key={i} active={currentSlide === i}>	
-			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
+		<CarouselSlide key={i} active={currentSlide === i} >
+			<SlideContainer onClick={toggleModal}>
+				<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
+			</SlideContainer>
 		</CarouselSlide>
 	)
-
+	
 	return(
 		<>
+			<Modal active={active} toggleModal={toggleModal}>
+				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} />
+			</Modal>
 			<HeaderToggleButton onClick={()=>setOpen(!open)}>{props.title}</HeaderToggleButton>
 			<ContainerMain open={open}>
 				<ContainerTop>
@@ -48,8 +58,8 @@ export const Carousel:React.FC<IProps> = (props) => {
 				<ThumbnailConatiner>
 					{props.children.map((thumbnail, i) =>
 						<div key={i} onClick={()=>setCurrentSlide(i)}>
-						<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
-						/>
+							<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
+							/>
 						</div>
 					)}
 					{/* {	aref.current.imageRef.current.addEventListener("click", () => alert("hi"))} */}
@@ -125,6 +135,15 @@ const HeaderToggleButton = styled(Header)`
 	}
 `
 
+const ModalImg = styled(Img)`
+	position:fixed;
+	top: 50%;
+	left:50%;
+	height:500px;
+	width:500px;
+	transform: translate(25%,25%);
+`
+
 const NavButtonContainer = styled.nav`
 width: 100%;
 	display: flex;
@@ -132,10 +151,15 @@ width: 100%;
 	padding: 1rem;
 `
 
+const SlideContainer = styled.div`
+	height: fit-content;
+	width: fit-content;
+	cursor: pointer;
+`
+
 const SlideImg = styled(Img)`
 	height: 300px;
 	width: 300px;
-
 `
 
 const ThumbnailConatiner = styled.div`
