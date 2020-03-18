@@ -16,10 +16,10 @@ interface IButton {
 export const Carousel:React.FC<IProps> = (props) => {
 	const [currentSlide, setCurrentSlide] = React.useState(0)
 	const [open, setOpen] = React.useState(false)
+	const aref = React.createRef()
 
 	const activeSlide = props.children.map((slide, i) =>
-		<CarouselSlide key={i} active={currentSlide === i}>
-			
+		<CarouselSlide key={i} active={currentSlide === i}>	
 			<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
 		</CarouselSlide>
 	)
@@ -28,36 +28,34 @@ export const Carousel:React.FC<IProps> = (props) => {
 		<>
 			<HeaderToggleButton onClick={()=>setOpen(!open)}>{props.title}</HeaderToggleButton>
 			<ContainerMain open={open}>
-			<ContainerTop>
-				<CarouselWrapper>
-					<CarouselSlides currentSlide={currentSlide}>
-						{activeSlide}
-					</CarouselSlides>
-				</CarouselWrapper>
-				<NavButtonContainer>
-					<ButtonPrev onClick={() => {
-						setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);
-					}}>{"< Prev"}</ButtonPrev>
+				<ContainerTop>
+					<CarouselWrapper>
+						<CarouselSlides currentSlide={currentSlide}>
+							{activeSlide}
+						</CarouselSlides>
+					</CarouselWrapper>
+					<NavButtonContainer>
+						<ButtonPrev onClick={() => {
+							setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);
+						}}>{"< Prev"}</ButtonPrev>
 
-					<ButtonNext onClick={() => {
-							setCurrentSlide((currentSlide + 1) % activeSlide.length)
-					}}>{"Next >"}</ButtonNext>
-				</NavButtonContainer>
-			</ContainerTop>
+						<ButtonNext onClick={() => {
+								setCurrentSlide((currentSlide + 1) % activeSlide.length)
+						}}>{"Next >"}</ButtonNext>
+					</NavButtonContainer>
+				</ContainerTop>
 
 				<ThumbnailConatiner>
-				{	props.children.map((thumbnail, i) =>
-						<Thumbnail key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
-							// onClick={
-							// 	(i) => {
-							// 		setCurrentSlide(i)
-							// 	}
-							// }
+					{props.children.map((thumbnail, i) =>
+						<div key={i} onClick={()=>setCurrentSlide(i)}>
+						<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
 						/>
-				)}
+						</div>
+					)}
+					{/* {	aref.current.imageRef.current.addEventListener("click", () => alert("hi"))} */}
 				</ThumbnailConatiner>
 			</ContainerMain>
-			</>
+		</>
 	)
 }
 
