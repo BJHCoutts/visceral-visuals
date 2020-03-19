@@ -11,13 +11,13 @@ import { MainMenu } from "../components/main-menu/main-menu"
 const IndexPage: React.FC = () => {
 
   return (
-    <AppContainer>
+    <>
       <SEO title="Visceral Visuals digital art and design" />
       <Head title={"Visceral Visuals"} />
       <Layout>
         <MainMenu/>
       </Layout>      
-    </AppContainer>
+    </>
   )
 }
 

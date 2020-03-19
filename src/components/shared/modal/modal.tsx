@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 interface IProps {
@@ -12,15 +13,13 @@ export const Modal:React.FC<IProps> = (props) => {
 
 	return(
 		<>
-			{props.active &&
-				<>
-				<Dimmer onClick={props.toggleModal} active={props.active} onScroll={e => e.stopPropagation()}>
+			{props.active && ReactDOM.createPortal(
+				<Dimmer onClick={props.toggleModal} active={props.active}>
 					<Content onClick={e => e.stopPropagation()}>
 						{props.children}
 					</Content>
 				</Dimmer>
-				</>
-			}
+			,document.body)}
 		</>
 	)
 }
@@ -29,10 +28,11 @@ const Content = styled.div`
 	height: fit-content;
 	width: fit-content;
 	cursor: initial;
-	position: fixed;
+	position: absolute;
   top: 50%;
   left: 50%;
 	transform: translate(-50%, -50%);
+	z-index:5000;
 `
 
 interface IDimmer {
@@ -43,9 +43,9 @@ interface IDimmer {
 const Dimmer = styled.div<IDimmer>`
 	position:fixed;
 	top:0;
+	right:0;
+	bottom:0;
 	left:0;
-	height: 100%;
-	width:100%;
 	background-color: hsla(0,0%,0%,.5);
 	z-index:5;
 	cursor: pointer;
