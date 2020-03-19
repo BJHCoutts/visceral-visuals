@@ -34,7 +34,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 	return(
 		<>
 			<Modal active={active} toggleModal={toggleModal}>
-				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} />
+				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
 			</Modal>
 			<HeaderToggleButton onClick={()=>setOpen(!open)}>{props.title}</HeaderToggleButton>
 			<ContainerMain open={open}>
@@ -136,12 +136,8 @@ const HeaderToggleButton = styled(Header)`
 `
 
 const ModalImg = styled(Img)`
-	position:fixed;
-	top: 50%;
-	left:50%;
 	height:500px;
 	width:500px;
-	transform: translate(25%,25%);
 `
 
 const NavButtonContainer = styled.nav`
