@@ -9,24 +9,39 @@ import { SubHeader } from "../shared/type";
 
 export const MainMenu = () => {
 
-	const { digitalImages } = useStaticQuery(
+	const { etherealImages, tangibleImages } = useStaticQuery(
     graphql`
       query {
-        digitalImages: allFile(filter: {
-          relativeDirectory: {eq: "digital"}
-        })
-        {       
-          edges {
-            node {
-              childImageSharp {
-                id
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
+        etherealImages: allFile(filter: {
+          relativeDirectory: {eq: "ethereal"}
+          })
+          {       
+            edges {
+              node {
+                childImageSharp {
+                  id
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
                 }
               }
-            }
-          }          
-        }
+            }          
+          }
+        tangibleImages: allFile(filter: {
+          relativeDirectory: {eq: "tangible"}
+          })
+          {       
+            edges {
+              node {
+                childImageSharp {
+                  id
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }          
+          }
       }
     `
   )
@@ -34,12 +49,15 @@ export const MainMenu = () => {
 	return(
 		<SectionContainer>
 			<SectionContent>
-				<SubHeader>This site is currently a lovingly WIP</SubHeader>
+				<SubHeader style={{marginBottom: "1.5rem"}}>This site is lovingly WIP, showcasing the creations of Brian Coutts</SubHeader>
 				<nav>
 					<NavList>
             <MenuItem>
               <Carousel title="Ethereal">
-                {digitalImages.edges}
+                {etherealImages.edges}
+              </Carousel>
+              <Carousel title="Tangible">
+                {tangibleImages.edges}
               </Carousel>
             </MenuItem>
 					</NavList>

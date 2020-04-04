@@ -110,11 +110,11 @@ interface IContainerMain {
 }
 
 const ContainerMain = styled.div<IContainerMain>`
-	max-height: ${props => props.open? "700px": "0px"};
+	max-height: ${props => props.open? "4000px": "0px"};
 	overflow: ${props => props.open? "show": "hidden"};
 	opacity: ${props => props.open? "1": "0"};
 	width:300px;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 	transition: max-height .8s ease-in, opacity .8s ease-in;
 `
 
@@ -138,6 +138,7 @@ const HeaderToggleButton = styled(Header)`
 const ModalImg = styled(Img)`
 	height:500px;
 	width:500px;
+	max-height: 100vh;
 `
 
 const NavButtonContainer = styled.nav`

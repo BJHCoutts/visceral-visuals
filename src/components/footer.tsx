@@ -16,10 +16,6 @@ const FooterContainer = styled.footer`
   display: grid;
   grid-template-columns: var(--grid);
   padding: 25px 0;
-  position:sticky;
-  bottom:0;
-  left:0;
-  right:0;
 `
 
 const FooterContent = styled.div`
