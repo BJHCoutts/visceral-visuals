@@ -4,7 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
 import { Carousel } from "../shared/carousel/carousel";
-import { SubHeader } from "../shared/type";
+import { SubHeader, ExternalLink } from "../shared/type";
+import { HeaderToggleButton } from "../shared/forms";
 
 
 export const MainMenu = () => {
@@ -59,6 +60,7 @@ export const MainMenu = () => {
               <Carousel title="Tangible">
                 {tangibleImages.edges}
               </Carousel>
+              <ExternalLink href="https://drive.google.com/open?id=1nm9GazWmS3uIUhDJiRlE5hBFS6OvJGhk"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></ExternalLink>
             </MenuItem>
 					</NavList>
 				</nav>

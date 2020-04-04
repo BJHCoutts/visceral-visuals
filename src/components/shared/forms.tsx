@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Header } from "./type"
 
 export const Input = styled.input`
 	width: 100%;
@@ -47,5 +48,17 @@ export const Button = styled.button`
 	}
 	&:focus {
 		outline: none;
+	}
+`
+
+export const HeaderToggleButton = styled(Header)`
+	cursor: pointer;
+	display:inline;
+	border: 2px solid var(--black);
+	padding: 0 3px;
+	&:hover{
+		background-color: var(--black);
+		color: var(--white);
+		transition: all .2s ease-in;
 	}
 `

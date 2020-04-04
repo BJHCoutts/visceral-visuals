@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { Header } from '../type'
-import { Button } from '../forms'
+import { Button, HeaderToggleButton } from '../forms'
 import { Modal } from '../modal/modal'
 
 interface IProps {
@@ -121,18 +121,6 @@ const ContainerMain = styled.div<IContainerMain>`
 const ContainerTop = styled.div`
 	width:300px;
 	margin: 0 auto;
-`
-
-const HeaderToggleButton = styled(Header)`
-	cursor: pointer;
-	display:inline;
-	border: 2px solid var(--black);
-	padding: 0 3px;
-	&:hover{
-		background-color: var(--black);
-		color: var(--white);
-		transition: all .2s ease-in;
-	}
 `
 
 const ModalImg = styled(Img)`
