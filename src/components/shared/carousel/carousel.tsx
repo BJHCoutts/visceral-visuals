@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
-import { Header } from '../type'
 import { Button, HeaderToggleButton } from '../forms'
 import { Modal } from '../modal/modal'
 
@@ -25,7 +24,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 	const activeSlide = props.children.map((slide, i) =>
 		<CarouselSlide key={i} active={currentSlide === i} >
-			<SlideContainer onClick={toggleModal}>
+			<SlideContainer onClick={toggleModal} onKeyDown={toggleModal}>
 				<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
 			</SlideContainer>
 		</CarouselSlide>
@@ -57,7 +56,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 				<ThumbnailConatiner>
 					{props.children.map((thumbnail, i) =>
-						<div key={i} onClick={()=>setCurrentSlide(i)}>
+						<div key={i} onClick={()=>setCurrentSlide(i)} onKeyDown={()=>setCurrentSlide(i)}>
 							<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}}
 							/>
 						</div>
