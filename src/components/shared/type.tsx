@@ -41,7 +41,10 @@ export const HR = styled.hr`
 
 export const SubHeader = styled.h2`
   font-size: 1.25rem;
-	margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
+  @media (min-width: ${breakPoints.tablet}){
+    margin-bottom: 4rem;
+  }
 `
 
 export const SubHeaderCenter = styled.h2`

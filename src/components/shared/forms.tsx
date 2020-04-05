@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Header } from "./type"
+import { breakPoints } from "./break-points"
 
 export const Input = styled.input`
 	width: 100%;
@@ -56,9 +57,18 @@ export const HeaderToggleButton = styled(Header)`
 	display:inline;
 	border: 2px solid var(--black);
 	padding: 0 3px;
+	font-size: 1.5rem;
+	font-family: var(--display-font);
 	&:hover{
 		background-color: var(--black);
 		color: var(--white);
 		transition: all .2s ease-in;
 	}
+	&:focus{
+		background-color: var(--black);
+		color: var(--white);
+	}
+	@media (min-width: ${breakPoints.tablet}) {
+		font-size: 1.75em;
+	}	
 `

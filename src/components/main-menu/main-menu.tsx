@@ -6,6 +6,7 @@ import { SectionContainer, SectionContent } from "../shared/containers";
 import { Carousel } from "../shared/carousel/carousel";
 import { SubHeader, ExternalLink } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
+import { breakPoints } from "../shared/break-points";
 
 
 export const MainMenu = () => {
@@ -48,9 +49,13 @@ export const MainMenu = () => {
   )
 
 	return(
-		<SectionContainer>
+		<SectionContainer style={{paddingTop: "0"}}>
 			<SectionContent>
-				<SubHeader style={{marginBottom: "1.5rem"}}>This site is lovingly WIP, showcasing the creations of Brian Coutts</SubHeader>
+				<SubHeader>
+          <Intro>
+            This site is lovingly WIP, showcasing the creations of Brian Coutts
+          </Intro>
+        </SubHeader>
 				<nav>
 					<NavList>
             <MenuItem>
@@ -68,6 +73,14 @@ export const MainMenu = () => {
 		</SectionContainer>
 	)
 }
+
+const Intro = styled.span`
+  font: 700 1rem/0rem var(--body-font);
+  color: black;
+  @media (min-width: ${breakPoints.tablet}){
+    font-size:1.2rem;
+  }
+`
 
 const MenuItem = styled.li`
 	font-size:2rem;

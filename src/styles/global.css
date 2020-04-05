@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inria+Sans:wght@700&display=swap');
 
 :root {
   --display-font: 'Amatic SC', cursive;
-  --body-font: 'Amatic SC', cursive;
+  --body-font: 'Inria Sans', sans-serif;
 
   --white: rgb(245, 245, 245);
   --black: rgb(21, 53, 74, 0.8);
@@ -23,8 +23,8 @@
   --grid: minmax(15px, 1fr) minmax(0, 80%) minmax(15px, 1fr);
   --banner-padding-mobile: 1.5rem 0 2rem 0;
   --banner-padding-desktop: 2.5rem 0 3rem 0;
-  --section-padding-mobile: 3rem 0 3.5rem 0;
-  --section-padding-desktop: 3.5rem 0 5rem 0;
+  --section-padding-mobile: 2rem 0 1rem 0;
+  --section-padding-desktop: 2.5rem 0 3.5rem 0;
   
   --shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.075);
   

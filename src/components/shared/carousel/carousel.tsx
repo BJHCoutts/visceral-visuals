@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 import { Button, HeaderToggleButton } from '../forms'
 import { Modal } from '../modal/modal'
+import { breakPoints } from '../break-points'
 
 interface IProps {
 	title: string
@@ -35,7 +36,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 			<Modal active={active} toggleModal={toggleModal}>
 				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
 			</Modal>
-			<HeaderToggleButton onClick={()=>setOpen(!open)}>{props.title}</HeaderToggleButton>
+			<ResponsiveHeaderToggleButton onClick={()=>setOpen(!open)} open={open}>{props.title}</ResponsiveHeaderToggleButton>
 			<ContainerMain open={open}>
 				<ContainerTop>
 					<CarouselWrapper>
@@ -113,8 +114,11 @@ const ContainerMain = styled.div<IContainerMain>`
 	overflow: ${props => props.open? "show": "hidden"};
 	opacity: ${props => props.open? "1": "0"};
 	width:300px;
-	margin: 0 auto 50px auto;
+	margin: 15px auto 5px auto;
 	transition: max-height .8s ease-in, opacity .8s ease-in;
+	@media (min-width: ${breakPoints.tablet}){
+		margin: 35px auto 20px auto;
+	}
 `
 
 const ContainerTop = styled.div`
@@ -125,7 +129,8 @@ const ContainerTop = styled.div`
 const ModalImg = styled(Img)`
 	height:500px;
 	width:500px;
-	max-height: 100vh;
+	max-height: 90vh;
+	max-width: 90vw;
 `
 
 const NavButtonContainer = styled.nav`
@@ -135,7 +140,20 @@ width: 100%;
 	padding: 1rem;
 `
 
-const SlideContainer = styled.div`
+interface IResponsiveHeaderToggleButton {
+	open: boolean
+}
+
+const ResponsiveHeaderToggleButton = styled(HeaderToggleButton)<IResponsiveHeaderToggleButton>`
+	background-color: ${props => props.open? "var(--black)" : "inherit"};
+	color: ${props => props.open? "var(--white)" : "inherit"};
+`
+
+interface ISlideContainer {
+	onKeyDown: any
+}
+
+const SlideContainer = styled.div<ISlideContainer>`
 	height: fit-content;
 	width: fit-content;
 	cursor: pointer;
@@ -149,6 +167,7 @@ const SlideImg = styled(Img)`
 const ThumbnailConatiner = styled.div`
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 50px;
 `
 
 interface IThumbnail {
