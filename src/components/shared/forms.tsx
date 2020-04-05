@@ -54,7 +54,7 @@ export const Button = styled.button`
 
 export const HeaderToggleButton = styled(Header)`
 	cursor: pointer;
-	display:inline;
+	display:inline-block;
 	border: 2px solid var(--black);
 	padding: 0 3px;
 	font-size: 1.5rem;

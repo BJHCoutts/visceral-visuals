@@ -7,6 +7,7 @@ import { Carousel } from "../shared/carousel/carousel";
 import { SubHeader, ExternalLink } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
+import { WebSitesMenu } from "../websitesMenu/websitesMenu";
 
 
 export const MainMenu = () => {
@@ -65,7 +66,9 @@ export const MainMenu = () => {
               <Carousel title="Tangible">
                 {tangibleImages.edges}
               </Carousel>
-              <ExternalLink href="https://drive.google.com/open?id=1nm9GazWmS3uIUhDJiRlE5hBFS6OvJGhk"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></ExternalLink>
+              <PrintPortfolioButton href="https://drive.google.com/open?id=1nm9GazWmS3uIUhDJiRlE5hBFS6OvJGhk"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
+              <br/>
+              <WebSitesMenu title="Websites"/>
             </MenuItem>
 					</NavList>
 				</nav>
@@ -90,4 +93,12 @@ const MenuItem = styled.li`
 
 const NavList = styled.ul`
   width: 100%;
+`
+
+const PrintPortfolioButton = styled(ExternalLink)`
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  @media (min-width: ${breakPoints.tablet}){
+    margin-bottom: 3rem;
+  }
 `

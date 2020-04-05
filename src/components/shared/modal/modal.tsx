@@ -15,7 +15,9 @@ export const Modal:React.FC<IProps> = (props) => {
 		<>
 			{props.active && ReactDOM.createPortal(
 				<Dimmer onClick={props.toggleModal} active={props.active}>
-					<Content onClick={e => e.stopPropagation()}>
+					<Content 
+						// onClick={e => e.stopPropagation()}
+					>
 						{props.children}
 					</Content>
 				</Dimmer>

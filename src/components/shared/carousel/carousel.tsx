@@ -20,6 +20,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 	const [active, setActive] = React.useState(false)
 
 	const toggleModal = (e:React.MouseEvent<HTMLDivElement, MouseEvent>):void => {
+		console.log("toggleModal")
 		setActive(!active)
 	}
 
