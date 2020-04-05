@@ -59,7 +59,7 @@ export const MainMenu = () => {
 				<nav>
 					<NavList>
             <MenuItem>
-              <Carousel title="Ethereal">
+              <Carousel title="Ethereal" >
                 {etherealImages.edges}
               </Carousel>
               <Carousel title="Tangible">
@@ -84,9 +84,10 @@ const Intro = styled.span`
 
 const MenuItem = styled.li`
 	font-size:2rem;
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
 `
 
 const NavList = styled.ul`
-
+  width: 100%;
 `

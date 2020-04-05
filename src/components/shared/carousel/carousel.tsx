@@ -54,7 +54,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 			<ContainerMain open={open}>
 				<ContainerTop>
 					<CarouselWrapper>
-						<CarouselSlides currentSlide={currentSlide}>
+						<CarouselSlides currentSlide={currentSlide} >
 							{activeSlide}
 						</CarouselSlides>
 					</CarouselWrapper>
@@ -167,6 +167,7 @@ const ResponsiveHeaderToggleButton = styled(HeaderToggleButton)<IResponsiveHeade
 
 interface ISlideContainer {
 	onKeyDown: any
+	// only losers use 'any'
 }
 
 const SlideContainer = styled.div<ISlideContainer>`
@@ -181,7 +182,8 @@ const SlideImg = styled(Img)`
 	max-width: 80vw;
 	max-height: 80vw;
 	left: 50%;
-	transform: translateX(50%);
+	transform: translateX(27%);
+	/* TODO fix position */
 	@media (min-width: ${breakPoints.mobile}){
 		max-height: none;
 	}
