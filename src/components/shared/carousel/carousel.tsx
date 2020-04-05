@@ -181,10 +181,12 @@ const SlideImg = styled(Img)`
 	width: 300px;
 	max-width: 80vw;
 	max-height: 80vw;
-	left: 50%;
-	transform: translateX(27%);
+	/* left: 50%;
+	transform: translateX(27%); */
 	/* TODO fix position */
 	@media (min-width: ${breakPoints.mobile}){
+		/* left: 50%;
+		transform: translateX(27%); */
 		max-height: none;
 	}
 `
