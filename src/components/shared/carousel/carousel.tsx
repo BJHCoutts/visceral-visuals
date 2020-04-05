@@ -30,13 +30,22 @@ export const Carousel:React.FC<IProps> = (props) => {
 			</SlideContainer>
 		</CarouselSlide>
 	)
+
+	const smoothScroll = (id:string) => {
+		document.getElementById(id)!.scrollIntoView({ behavior: "smooth"})
+	}
+
+	const handleHeaderClick = (id:string) => {
+		setOpen(!open)
+		smoothScroll(id)
+	}
 	
 	return(
 		<>
 			<Modal active={active} toggleModal={toggleModal}>
 				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
 			</Modal>
-			<ResponsiveHeaderToggleButton onClick={()=>setOpen(!open)} open={open}>{props.title}</ResponsiveHeaderToggleButton>
+			<ResponsiveHeaderToggleButton onClick={()=>handleHeaderClick(props.title)} open={open} id={props.title}>{props.title}</ResponsiveHeaderToggleButton>
 			<ContainerMain open={open}>
 				<ContainerTop>
 					<CarouselWrapper>
@@ -113,9 +122,10 @@ const ContainerMain = styled.div<IContainerMain>`
 	max-height: ${props => props.open? "4000px": "0px"};
 	overflow: ${props => props.open? "show": "hidden"};
 	opacity: ${props => props.open? "1": "0"};
-	width:300px;
+	width:100%;
 	margin: 15px auto 5px auto;
 	transition: max-height .8s ease-in, opacity .8s ease-in;
+	max-width: 100vw;
 	@media (min-width: ${breakPoints.tablet}){
 		margin: 35px auto 20px auto;
 	}
@@ -134,7 +144,6 @@ const ModalImg = styled(Img)`
 `
 
 const NavButtonContainer = styled.nav`
-width: 100%;
 	display: flex;
 	justify-content: space-evenly;
 	padding: 1rem;
@@ -162,12 +171,14 @@ const SlideContainer = styled.div<ISlideContainer>`
 const SlideImg = styled(Img)`
 	height: 300px;
 	width: 300px;
+	max-width: 80vw;
 `
 
 const ThumbnailConatiner = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 50px;
+	width: 100%;
 `
 
 interface IThumbnail {
@@ -175,8 +186,12 @@ interface IThumbnail {
 }
 
 const Thumbnail = styled(Img)<IThumbnail>`
-	height: 100px;
-	width: 100px;
 	border: 3px solid ${props => props.active? "white": "hsla(0%, 0%, 0%, 0)"};
 	cursor: pointer;
+	height: 70px;
+	width: 70px;
+	@media (min-width: ${breakPoints.tablet}){
+		height: 100px;
+		width: 100px;
+	}
 `
