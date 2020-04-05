@@ -95,6 +95,7 @@ const CarouselSlide = styled.div<ICarouselSlide>`
 	opacity: ${props => props.active? 1:0};
 	transition: all 0.5s ease;
 	width: 100%;
+	justify-self: center;
 	margin: 0 auto;
 `
 
@@ -136,7 +137,8 @@ const ContainerMain = styled.div<IContainerMain>`
 `
 
 const ContainerTop = styled.div`
-	width:300px;
+	width:100%;
+	max-width: 80vw;
 	margin: 0 auto;
 `
 
@@ -151,6 +153,7 @@ const NavButtonContainer = styled.nav`
 	display: flex;
 	justify-content: space-evenly;
 	padding: 1rem;
+	width: 100%;
 `
 
 interface IResponsiveHeaderToggleButton {
@@ -176,6 +179,12 @@ const SlideImg = styled(Img)`
 	height: 300px;
 	width: 300px;
 	max-width: 80vw;
+	max-height: 80vw;
+	left: 50%;
+	transform: translateX(50%);
+	@media (min-width: ${breakPoints.mobile}){
+		max-height: none;
+	}
 `
 
 const ThumbnailConatiner = styled.div`
