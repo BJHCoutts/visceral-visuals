@@ -53,31 +53,6 @@ export const Layout: React.FC<Props> = ({ children }) => {
     false,
     300
   )
-  
-  const HeaderContainer = styled.div`
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: var(--grid);
-  background: red;
-  height:500px;
-  max-height: ${ (props) => props.sticky ? '300px' : '50px'};
-  transition: all 0.5s;
-`
-  
-  const LogoImg = styled.img`
-  height: 100%;
-  /* animation: ${fadeIn} 1s ease-in; */
-  transition: transform 2s ease-in, opacity 1s ease-in;
-  transform-origin: 0% 0%;
-  @media (min-width: ${breakPoints.tablet}){
-  }
-  `
-
-
 
   return (
     <>
@@ -121,6 +96,20 @@ const fadeIn = keyframes`
   }
 `
 
+const HeaderContainer = styled.div`
+position: sticky;
+top: 0;
+left: 0;
+right: 0;
+z-index: 5;
+display: grid;
+grid-template-columns: var(--grid);
+background: red;
+height:500px;
+max-height: ${ (props) => props.sticky ? '300px' : '50px'};
+transition: all 0.5s;
+`
+
 const HeaderContent = styled.div`
 display: relative;
 grid-column: 2;
@@ -128,6 +117,15 @@ grid-column: 2;
 
 const LayoutContainer = styled.div`
   height: 100%;
+`
+
+const LogoImg = styled.img`
+height: 100%;
+/* animation: ${fadeIn} 1s ease-in; */
+transition: transform 2s ease-in, opacity 1s ease-in;
+transform-origin: 0% 0%;
+@media (min-width: ${breakPoints.tablet}){
+}
 `
 
 const ParallaxBgImg = styled(BackgroundImage)`
