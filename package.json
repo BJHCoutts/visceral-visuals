@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "@types/node": "^13.7.0",
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.2",
