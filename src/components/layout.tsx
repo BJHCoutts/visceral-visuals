@@ -34,42 +34,37 @@ export const Layout: React.FC<Props> = ({ children }) => {
 
   const bgImagePath = data.bgImage.childImageSharp.fluid
 
-  const [ sticky, setSticky ] = React.useState(false)
-  const [ open, setOpen ] = React.useState(false)
+  // const [ sticky, setSticky ] = React.useState(false)
+  // const [ open, setOpen ] = React.useState(false)
   // const [ logoHeight, setLogoHeight] = React.useState('300')
 
-  const toggleOpen = () => {
-    setOpen(!open)
-  }
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      // const isShow = currPos.y > prevPos.y
-      const isShow = currPos.y > prevPos.y
-      if (isShow !== sticky) setSticky(isShow)
-    },
-    [sticky],
-    false,
-    false,
-    300
-  )
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     // const isShow = currPos.y > prevPos.y
+  //     // if (isShow !== sticky) setSticky(false)
+  //     if (currPos.y < 150) setSticky(false)
+  //     if (currPos.y > 150) setSticky(true)
+  //   },
+  //   [sticky]
+  // )
 
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
 
       <ParallaxBgImg fluid={bgImagePath} >
-        <HeaderContainer sticky={sticky}>
-          {/* <HeaderContent>
+        <HeaderContainer >
+          <HeaderContent>
                 <LogoImg src={VVLogo} />
-          </HeaderContent> */}
+          </HeaderContent>
         </HeaderContainer>
-
+        <NavBar>
+          <NavList>
+            <NavItem>Images</NavItem>
+            <NavItem>Websites</NavItem>
+          </NavList>
+        </NavBar>
         <LayoutContainer >
-          <TestDiv open={open}>
-            doop doop doop
-          </TestDiv>
-          <button onClick={toggleOpen}>test Button</button>
           <Content>{children}</Content>
           <Footer />
         </LayoutContainer>
@@ -97,48 +92,48 @@ const fadeIn = keyframes`
 `
 
 const HeaderContainer = styled.div`
-position: sticky;
-top: 0;
-left: 0;
-right: 0;
-z-index: 5;
-display: grid;
-grid-template-columns: var(--grid);
-background: red;
-height:500px;
-max-height: ${ (props) => props.sticky ? '300px' : '50px'};
-transition: all 0.5s;
+  display: grid;
+  grid-template-columns: var(--grid);
 `
 
 const HeaderContent = styled.div`
-display: relative;
-grid-column: 2;
+  grid-column: 2;
 `
 
 const LayoutContainer = styled.div`
-  height: 100%;
 `
 
 const LogoImg = styled.img`
-height: 100%;
-/* animation: ${fadeIn} 1s ease-in; */
-transition: transform 2s ease-in, opacity 1s ease-in;
+max-width: 100%;
+animation: ${fadeIn} 1s ease-in;
 transform-origin: 0% 0%;
 @media (min-width: ${breakPoints.tablet}){
 }
 `
 
+const NavBar = styled.nav`
+  background-color: var(--black);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: var(--grid);
+  padding: 10px 0;
+`
+
+const NavItem = styled.li`
+  color: var(--white);
+  font: 400 2rem/2rem var(--display-font);
+`
+
+const NavList = styled.ul`
+  grid-column:2;
+  display: flex;
+  justify-content: space-around;
+`
+
 const ParallaxBgImg = styled(BackgroundImage)`
 background-attachment: fixed;
 min-height: 100vh;
-`
-
-const TestDiv = styled.div`
-  border: 1px solid gray;
-  border-top: none;
-  opacity: ${props => (props.open ? "1" : "0")};
-  max-height: ${props => (props.open ? "100%" : "0")};
-  overflow: hidden;
-  padding: ${props => (props.open ? "15px" : "0 15px")};
-  transition: all 0.3s;
 `
