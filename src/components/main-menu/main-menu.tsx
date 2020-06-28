@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
 import { Carousel } from "../shared/carousel/carousel";
-import { SubHeader, ExternalLink } from "../shared/type";
+import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
 import { WebSitesMenu } from "../websitesMenu/websitesMenu";
@@ -50,7 +50,7 @@ export const MainMenu = () => {
   )
 
 	return(
-		<SectionContainer style={{paddingTop: "0"}}>
+		<SectionContainer>
 			<SectionContent>
 				<SubHeader>
           <Intro>
@@ -60,7 +60,18 @@ export const MainMenu = () => {
 				<nav>
 					<NavList>
             <MenuItem>
-              <Carousel title="Ethereal" >
+              <Header id="images">Image Galleries</Header>
+              <ImageNavBar>
+                <ImageNavList>
+                  <ImageNavItemDigital>
+                    Digital
+                  </ImageNavItemDigital>
+                  <ImageNavItemTangible>
+                    Tangible
+                  </ImageNavItemTangible>
+                </ImageNavList>
+              </ImageNavBar>
+              <Carousel title="Digital" >
                 {etherealImages.edges}
               </Carousel>
               <Carousel title="Tangible">
@@ -68,7 +79,7 @@ export const MainMenu = () => {
               </Carousel>
               <PrintPortfolioButton href="https://drive.google.com/open?id=1nm9GazWmS3uIUhDJiRlE5hBFS6OvJGhk"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
               <br/>
-              <WebSitesMenu title="Websites"/>
+              <WebSitesMenu title="Websites" id="websites"/>
             </MenuItem>
 					</NavList>
 				</nav>
@@ -76,6 +87,35 @@ export const MainMenu = () => {
 		</SectionContainer>
 	)
 }
+
+const ImageNavBar = styled.nav`
+  display: grid;
+  grid-template-columns: var(--grid);
+  border-bottom: 5px solid var(--white);
+  width: 100%;
+`
+
+const ImageNavItemDigital = styled.li`
+  color: var(--black);
+  background-color: var(--white);
+  font: 400 1.5rem/2rem var(--display-font);
+  width:100%;
+  text-align:center;
+  `
+
+const ImageNavItemTangible = styled.li`
+  color: var(--white);
+  background-color: var(--black);
+  font: 400 1.5rem/2rem var(--display-font);
+  width:100%;
+  text-align:center;
+  `
+
+const ImageNavList = styled.ul`
+  grid-column:2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`
 
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);

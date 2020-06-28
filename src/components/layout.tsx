@@ -34,6 +34,12 @@ export const Layout: React.FC<Props> = ({ children }) => {
 
   const bgImagePath = data.bgImage.childImageSharp.fluid
 
+  const scrollTo = (id:string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({behavior:"smooth", block:"center"})
+    }
+  }
   // const [ sticky, setSticky ] = React.useState(false)
   // const [ open, setOpen ] = React.useState(false)
   // const [ logoHeight, setLogoHeight] = React.useState('300')
@@ -60,8 +66,8 @@ export const Layout: React.FC<Props> = ({ children }) => {
         </HeaderContainer>
         <NavBar>
           <NavList>
-            <NavItem>Images</NavItem>
-            <NavItem>Websites</NavItem>
+            <NavItem onClick={() => scrollTo("images")}>Images</NavItem>
+            <NavItem onClick={() => scrollTo("websites")}>Websites</NavItem>
           </NavList>
         </NavBar>
         <LayoutContainer >
@@ -124,7 +130,7 @@ const NavBar = styled.nav`
 
 const NavItem = styled.li`
   color: var(--white);
-  font: 400 2rem/2rem var(--display-font);
+  font: 400 1.5rem/2rem var(--display-font);
 `
 
 const NavList = styled.ul`
