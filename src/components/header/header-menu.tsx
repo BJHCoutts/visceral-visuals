@@ -4,8 +4,8 @@ import styled from "styled-components"
 interface Props {
   menuOptions: string[]
 }
-export const HeaderMenu = (props: Props) => {
-  const {menuOptions} = props
+export const HeaderMenu<Props> = ({menuOptions}) => {
+
   return (
     <Container>
       {menuOptions.map((menuOption: string) => {

@@ -1,20 +1,11 @@
-// import { Link } from "gatsby"
 import * as React from "react"
-import styled, {keyframes} from "styled-components"
+import styled, {keyframes, StyledComponent} from "styled-components"
 
-// import { MobileMenu } from "./mobile-menu"
-
-// import searchIcon from "../../icons/baseline-search-24px-white.svg"
-// import hamburger from "../../icons/baseline-menu-24px.svg"
 import VVLogo from "../../logos/GearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
 
-interface Props {
-  siteTitle: string
-}
-
-export default function Header () {
+export default (function Header () {
 
   return (
     <SectionContainer>
@@ -24,7 +15,7 @@ export default function Header () {
        </HeaderContent>
     </SectionContainer>
   )
-}
+}) as React.FC
 
 
 const fadeIn = keyframes`
@@ -36,7 +27,7 @@ const fadeIn = keyframes`
   }
 `
 
-const HeaderContent = styled(SectionContent)`
+const HeaderContent = styled(SectionContent as StyledComponent)`
   place-items: center;
 `
 

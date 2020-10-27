@@ -1,9 +1,9 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
-import { breakPoints } from "./shared/break-points"
-import { ExternalLink } from "./shared/type"
+import { breakPoints } from "../shared/break-points"
+import { ExternalLink } from "../shared/type"
 
-export const Footer: React.FC = () => {
+export default (function Footer () {
   return (
     <FooterContainer>
       <FooterContent>
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
       </FooterContent>
     </FooterContainer>
   )
-}
+}) as React.FC
 
 const EmailLink = styled(ExternalLink)`
   color: var(--white);
