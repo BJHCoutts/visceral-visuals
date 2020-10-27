@@ -12,11 +12,11 @@ import WebSitesMenu from "../websitesMenu";
 
 export default (function MainMenu () {
 
-	const { etherealImages, tangibleImages } = useStaticQuery(
+	const { digitalImages, analogueImages } = useStaticQuery(
     graphql`
       query {
-        etherealImages: allFile(filter: {
-          relativeDirectory: {eq: "ethereal"}
+        digitalImages: allFile(filter: {
+          relativeDirectory: {eq: "digital"}
           })
           {       
             edges {
@@ -30,8 +30,8 @@ export default (function MainMenu () {
               }
             }          
           }
-        tangibleImages: allFile(filter: {
-          relativeDirectory: {eq: "tangible"}
+        analogueImages: allFile(filter: {
+          relativeDirectory: {eq: "analogue"}
           })
           {       
             edges {
@@ -66,20 +66,20 @@ export default (function MainMenu () {
                   <ImageNavItemDigital>
                     Digital
                   </ImageNavItemDigital>
-                  <ImageNavItemTangible>
-                    Tangible
-                  </ImageNavItemTangible>
+                  <ImageNavItemanalogue>
+                    analogue
+                  </ImageNavItemanalogue>
                 </ImageNavList>
               </ImageNavBar>
-              <Carousel title="Digital" >
-                {etherealImages.edges}
+              {/* <Carousel title="Digital" >
+                {digitalImages.edges}
               </Carousel>
-              <Carousel title="Tangible">
-                {tangibleImages.edges}
-              </Carousel>
-              <PrintPortfolioButton href="https://drive.google.com/open?id=1nm9GazWmS3uIUhDJiRlE5hBFS6OvJGhk"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
+              <Carousel title="analogue">
+                {analogueImages.edges}
+              </Carousel> */}
+              <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
               <br/>
-              <WebSitesMenu title="Websites" id="websites"/>
+              {/* <WebSitesMenu title="Websites" id="websites"/> */}
             </MenuItem>
 					</NavList>
 				</nav>
@@ -103,7 +103,7 @@ const ImageNavItemDigital = styled.li`
   text-align:center;
   `
 
-const ImageNavItemTangible = styled.li`
+const ImageNavItemanalogue = styled.li`
   color: var(--white);
   background-color: var(--black);
   font: 400 1.5rem/2rem var(--display-font);

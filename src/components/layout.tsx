@@ -108,6 +108,7 @@ const NavBar = styled.nav`
 const NavItem = styled.li`
   color: var(--white);
   font: 400 1.5rem/2rem var(--display-font);
+  cursor: pointer;
 `
 
 const NavList = styled.ul`
