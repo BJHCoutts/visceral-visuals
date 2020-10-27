@@ -9,6 +9,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 import Footer from "./footer/"
 import Header from "./header/"
+import NavBar from './nav-bar/'
 
 interface Props {
   children: React.ReactNode
@@ -55,21 +56,14 @@ export default (function Layout ({ children }) {
   // )
 
   return (
-    <>
-      <ParallaxBgImg fluid={bgImagePath} >
+    <ParallaxBgImg fluid={bgImagePath} >
       <Header />
-        <NavBar>
-          <NavList>
-            <NavItem onClick={() => scrollTo("images")}>Images</NavItem>
-            <NavItem onClick={() => scrollTo("websites")}>Websites</NavItem>
-          </NavList>
-        </NavBar>
-        <LayoutContainer >
-          <Content>{children}</Content>
-          <Footer />
-        </LayoutContainer>
-      </ParallaxBgImg>
-    </>
+      <NavBar />
+      <LayoutContainer >
+        <Content>{children}</Content>
+        <Footer />
+      </LayoutContainer>
+    </ParallaxBgImg>
   )
 }) as React.FC<Props>
 
@@ -92,29 +86,6 @@ const fadeIn = keyframes`
 `
 
 const LayoutContainer = styled.div`
-`
-
-const NavBar = styled.nav`
-  background-color: var(--black);
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-template-columns: var(--grid);
-  padding: 10px 0;
-`
-
-const NavItem = styled.li`
-  color: var(--white);
-  font: 400 1.5rem/2rem var(--display-font);
-  cursor: pointer;
-`
-
-const NavList = styled.ul`
-  grid-column:2;
-  display: flex;
-  justify-content: space-around;
 `
 
 const ParallaxBgImg = styled(BackgroundImage)`

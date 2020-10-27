@@ -7,7 +7,8 @@ import { Carousel } from "../shared/carousel/carousel";
 import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
-import WebSitesMenu from "../websitesMenu";
+import CarouselToggler from '../carousel-toggler/'
+import WebSitesMenu from "../websites-menu";
 
 
 export default (function MainMenu () {
@@ -61,16 +62,7 @@ export default (function MainMenu () {
 					<NavList>
             <MenuItem>
               <Header id="images">Image Galleries</Header>
-              <ImageNavBar>
-                <ImageNavList>
-                  <ImageNavItemDigital>
-                    Digital
-                  </ImageNavItemDigital>
-                  <ImageNavItemanalogue>
-                    analogue
-                  </ImageNavItemanalogue>
-                </ImageNavList>
-              </ImageNavBar>
+              <CarouselToggler />
               {/* <Carousel title="Digital" >
                 {digitalImages.edges}
               </Carousel>
@@ -88,35 +80,6 @@ export default (function MainMenu () {
 	)
 }) as React.FC
 
-const ImageNavBar = styled.nav`
-  display: grid;
-  grid-template-columns: var(--grid);
-  border-bottom: 5px solid var(--white);
-  width: 100%;
-`
-
-const ImageNavItemDigital = styled.li`
-  color: var(--black);
-  background-color: var(--white);
-  font: 400 1.5rem/2rem var(--display-font);
-  width:100%;
-  text-align:center;
-  `
-
-const ImageNavItemanalogue = styled.li`
-  color: var(--white);
-  background-color: var(--black);
-  font: 400 1.5rem/2rem var(--display-font);
-  width:100%;
-  text-align:center;
-  `
-
-const ImageNavList = styled.ul`
-  grid-column:2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`
-
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);
   color: black;
@@ -127,7 +90,7 @@ const Intro = styled.span`
 
 const MenuItem = styled.li`
 	font-size:2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   width: 100%;
 `
 
@@ -137,8 +100,8 @@ const NavList = styled.ul`
 
 const PrintPortfolioButton = styled(ExternalLink)`
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
   @media (min-width: ${breakPoints.tablet}){
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
   }
 `

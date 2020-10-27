@@ -153,7 +153,7 @@ const ModalImg = styled(Img)`
 const NavButtonContainer = styled.nav`
 	display: flex;
 	justify-content: space-evenly;
-	padding: 1rem;
+	padding: 1em;
 	width: 100%;
 `
 

@@ -16,7 +16,7 @@ export default (function Footer () {
 
 const EmailLink = styled(ExternalLink)`
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   font-size: 1.2rem;
   @media (min-width: ${breakPoints.tablet}){
     margin-bottom: 0;
