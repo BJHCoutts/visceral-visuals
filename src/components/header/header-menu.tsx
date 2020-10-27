@@ -5,9 +5,10 @@ interface Props {
   menuOptions: string[]
 }
 export const HeaderMenu = (props: Props) => {
+  const {menuOptions} = props
   return (
     <Container>
-      {props.menuOptions.map((menuOption: string) => {
+      {menuOptions.map((menuOption: string) => {
         return <Title key="menuOption">{menuOption}</Title>
       })}
     </Container>

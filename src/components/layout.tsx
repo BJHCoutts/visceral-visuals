@@ -3,12 +3,13 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, {keyframes} from "styled-components"
 import BackgroundImage from 'gatsby-background-image'
-import VVLogo from "../logos/GearsFeather.svg"
+// import VVLogo from "../logos/GearsFeather.svg"
 import { breakPoints } from "./shared/break-points"
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+// import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 // import { useScrollPosition } from './shared/use-scroll-position'
 
 import { Footer } from "./footer"
+import Header from "./header/"
 
 interface Props {
   children: React.ReactNode
@@ -56,14 +57,14 @@ export const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-
       <ParallaxBgImg fluid={bgImagePath} >
-        <HeaderContainer >
+      <Header />
+        {/* <HeaderContainer >
           <HeaderContent>
                 <LogoImg src={VVLogo} />
           </HeaderContent>
-        </HeaderContainer>
+        </HeaderContainer> */}
+
         <NavBar>
           <NavList>
             <NavItem onClick={() => scrollTo("images")}>Images</NavItem>
@@ -104,16 +105,19 @@ const HeaderContainer = styled.div`
 
 const HeaderContent = styled.div`
   grid-column: 2;
+  place-items:center;
+  width: 100%;
 `
 
 const LayoutContainer = styled.div`
 `
 
 const LogoImg = styled.img`
-max-width: 100%;
+width: 100%;
 animation: ${fadeIn} 1s ease-in;
 transform-origin: 0% 0%;
 @media (min-width: ${breakPoints.tablet}){
+  max-width: 300px;
 }
 `
 

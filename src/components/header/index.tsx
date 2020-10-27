@@ -14,13 +14,14 @@ interface Props {
   siteTitle: string
 }
 
-export const Header = ({ siteTitle }: Props) => {
+export default function Header () {
 
   return (
     <SectionContainer>
-      <SectionContent>
-        <LogoImg src={VVLogo}/>
-       </SectionContent>
+      <HeaderContent>
+        <LogoImg src={VVLogo} alt="Visceral Visuals logo"/>
+        <Subtitle>by Brian Coutts</Subtitle>
+       </HeaderContent>
     </SectionContainer>
   )
 }
@@ -35,6 +36,10 @@ const fadeIn = keyframes`
   }
 `
 
+const HeaderContent = styled(SectionContent)`
+  place-items: center;
+`
+
 const LogoImg = styled.img`
   display:block;
   width:100%;
@@ -42,6 +47,13 @@ const LogoImg = styled.img`
   animation: ${fadeIn} 1s ease-in;
   margin: 0 auto;
   @media (min-width: ${breakPoints.tablet}){
-    max-width: 300px;
+    max-width: 350px;
   }
+`
+
+const Subtitle = styled.h2`
+  text-align:center;
+  text-transform: lowercase;
+  font-variant:small-caps;
+  letter-spacing: .08em;
 `
