@@ -13,3 +13,5 @@ export const WebSitesMenu:React.FC<IProps> = (props) => {
 		</HeaderToggleButton>
 	)
 }
+
+export default WebSitesMenu

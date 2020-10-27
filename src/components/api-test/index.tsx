@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-export const APITest = () => {
+export default (function APITest () {
 
 	const [jsonplaceholder, setJsonPlaceholder] = React.useState("loading...")
 	const [dadJoke, setDadJoke] = React.useState("loading...")
@@ -52,4 +52,4 @@ export const APITest = () => {
 			</ul>
 		</div>
 	)
-}
+}) as React.FC

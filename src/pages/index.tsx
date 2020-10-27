@@ -1,10 +1,10 @@
 import * as React from "react"
 
 import { Head } from "../components/head"
-import { Layout } from "../components/layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { MainMenu } from "../components/main-menu/main-menu"
+import MainMenu from "../components/main-menu"
 // import { APITest } from "../components/api-test/api-test"
 
 const IndexPage: React.FC = () => {

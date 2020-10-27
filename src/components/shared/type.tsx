@@ -24,8 +24,8 @@ export const ExternalLink = styled.a.attrs(props => ({
 
 export const Header = styled.h1`
   color: var(--black);
-  margin-bottom: 1.5rem;
-  font: 600 2rem/2rem var(--display-font);
+  margin-bottom: 1.5em;
+  font: 600 2rem/2em var(--display-font);
 `
 
 export const HeaderCenter = styled(Header)`
@@ -35,15 +35,15 @@ export const HeaderCenter = styled(Header)`
 export const HR = styled.hr`
 	border: 1px solid var(--primary);
 	width: 50%;
-	margin-top: 1rem;
-	margin-bottom: .5rem;
+	margin-top: 1em;
+	margin-bottom: .5em;
 `
 
 export const SubHeader = styled.h2`
   font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
   @media (min-width: ${breakPoints.tablet}){
-    margin-bottom: 4rem;
+    margin-bottom: 4em;
   }
 `
 

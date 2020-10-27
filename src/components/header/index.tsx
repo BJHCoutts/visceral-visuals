@@ -27,7 +27,7 @@ const fadeIn = keyframes`
   }
 `
 
-const HeaderContent = styled(SectionContent as StyledComponent)`
+const HeaderContent = styled(SectionContent)`
   place-items: center;
 `
 

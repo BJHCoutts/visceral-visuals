@@ -7,10 +7,10 @@ import { Carousel } from "../shared/carousel/carousel";
 import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
-import { WebSitesMenu } from "../websitesMenu/websitesMenu";
+import WebSitesMenu from "../websitesMenu";
 
 
-export const MainMenu = () => {
+export default (function MainMenu () {
 
 	const { etherealImages, tangibleImages } = useStaticQuery(
     graphql`
@@ -86,7 +86,7 @@ export const MainMenu = () => {
 			</SectionContent>
 		</SectionContainer>
 	)
-}
+}) as React.FC
 
 const ImageNavBar = styled.nav`
   display: grid;

@@ -12,12 +12,12 @@ export const Input = styled.input`
 `
 
 export const LabelContainer = styled.label`
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 	display: block;
 `
 
 export const LabelText = styled.div`
-	margin-bottom:.15rem;
+	margin-bottom:.15em;
 	color: var(--primary);
 	font-weight: 600;
 `
@@ -28,7 +28,7 @@ export const TextArea = styled.textarea`
 	background-color: #EAEAEA;
 	border: solid 1px #999;
 	padding: 5px 3px;
-	min-height: 5rem;
+	min-height: 5em;
 	font-family: var(--body-font);
 `
 
@@ -69,6 +69,6 @@ export const HeaderToggleButton = styled(Header)`
 		color: var(--white);
 	}
 	@media (min-width: ${breakPoints.tablet}) {
-		font-size: 1.75em;
+		font-size: 1.75rem;
 	}	
 `

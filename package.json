@@ -9,7 +9,7 @@
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@types/node": "^13.7.0",
     "@types/react-helmet": "^5.0.15",
-    "@types/styled-components": "^4.4.2",
+    "@types/styled-components": "^5.1.4",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.12",
     "gatsby-background-image": "^0.9.14",

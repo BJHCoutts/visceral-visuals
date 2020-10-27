@@ -1,9 +1,9 @@
 import * as React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, {keyframes} from "styled-components"
 import BackgroundImage from 'gatsby-background-image'
-import { breakPoints } from "./shared/break-points"
+// import { breakPoints } from "./shared/break-points"
 // import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 // import { useScrollPosition } from './shared/use-scroll-position'
 
@@ -14,7 +14,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const Layout: React.FC<Props> = ({ children }) => {
+export default (function Layout ({ children }) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -71,11 +71,11 @@ export const Layout: React.FC<Props> = ({ children }) => {
       </ParallaxBgImg>
     </>
   )
-}
+}) as React.FC<Props>
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+// Layout.propTypes = {
+//   children: PropTypes.node.isRequired,
+// }
 
 const Content = styled.div`
   display: grid;
