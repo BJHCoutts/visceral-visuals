@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default (function () {
+export const NavBar:React.FC = () => {
 	return(
-		<NavBar>
+		<NavBarContainer>
 			<NavList>
 				<NavItem onClick={() => scrollTo("images")}>Images</NavItem>
 				<NavItem onClick={() => scrollTo("websites")}>Websites</NavItem>
 			</NavList>
-		</NavBar>
+		</NavBarContainer>
 	)
-}) as React.FC
+}
 
-const NavBar = styled.nav`
+const NavBarContainer = styled.nav`
   background-color: var(--black);
   position: sticky;
   top: 0;

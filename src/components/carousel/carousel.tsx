@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
-import { Button, HeaderToggleButton } from '../forms'
-import { Modal } from '../modal/modal'
-import { breakPoints } from '../break-points'
+import { Button, HeaderToggleButton } from '../shared/forms'
+import { Modal } from '../shared/modal/modal'
+import { breakPoints } from '../shared/break-points'
 
 interface IProps {
 	title: string

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { breakPoints } from "../shared/break-points"
 import { ExternalLink } from "../shared/type"
 
-export default (function Footer () {
+export const Footer:React.FC = () => {
   return (
     <FooterContainer>
       <FooterContent>
@@ -12,7 +12,7 @@ export default (function Footer () {
       </FooterContent>
     </FooterContainer>
   )
-}) as React.FC
+}
 
 const EmailLink = styled(ExternalLink)`
   color: var(--white);

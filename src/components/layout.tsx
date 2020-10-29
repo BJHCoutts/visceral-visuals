@@ -1,15 +1,15 @@
 import * as React from "react"
 // import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components"
 import BackgroundImage from 'gatsby-background-image'
 // import { breakPoints } from "./shared/break-points"
 // import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 // import { useScrollPosition } from './shared/use-scroll-position'
 
-import Footer from "./footer/"
-import Header from "./header/"
-import NavBar from './nav-bar/'
+import { Footer } from "./footer/footer"
+import { Header } from "./header/header"
+import { NavBar } from './nav-bar/nav-bar'
 
 interface Props {
   children: React.ReactNode

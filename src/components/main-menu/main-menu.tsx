@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
-import { Carousel } from "../shared/carousel/carousel";
+import { Carousel } from "../carousel/carousel";
 import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
-import CarouselToggler from '../carousel-toggler/'
+import { CarouselToggler } from '../carousel/carousel-toggler'
 import WebSitesMenu from "../websites-menu";
 
 
-export default (function MainMenu () {
+export const MainMenu:React.FC = () => {
 
 	const { digitalImages, analogueImages } = useStaticQuery(
     graphql`
@@ -55,7 +55,8 @@ export default (function MainMenu () {
 			<SectionContent>
 				<SubHeader>
           <Intro>
-            This site is lovingly WIP, showcasing the creations of Brian Coutts
+            I am a ʕ•́ᴥ•̀ʔっ♡ WIP site
+            {/* This site is lovingly a WIP, showcasing the creations of Brian Coutts */}
           </Intro>
         </SubHeader>
 				<nav>
@@ -78,7 +79,7 @@ export default (function MainMenu () {
 			</SectionContent>
 		</SectionContainer>
 	)
-}) as React.FC
+}
 
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);

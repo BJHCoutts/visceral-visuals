@@ -5,7 +5,7 @@ import VVLogo from "../../logos/GearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
 
-export default (function Header () {
+export const Header:React.FC = () => {
 
   return (
     <SectionContainer>
@@ -15,7 +15,7 @@ export default (function Header () {
        </HeaderContent>
     </SectionContainer>
   )
-}) as React.FC
+}
 
 
 const fadeIn = keyframes`
