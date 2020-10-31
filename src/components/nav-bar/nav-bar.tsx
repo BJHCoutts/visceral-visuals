@@ -5,8 +5,10 @@ export const NavBar:React.FC = () => {
 	return(
 		<NavBarContainer>
 			<NavList>
-				<NavItem onClick={() => scrollTo("images")}>Images</NavItem>
-				<NavItem onClick={() => scrollTo("websites")}>Websites</NavItem>
+				<NavItem onClick={() => document.getElementById("images").scrollIntoView({behavior: "smooth"})}>Images</NavItem>
+        <NavItem 
+          // onClick={() => document.getElementById("websites").scrollIntoView({behavior: "smooth"})}
+        >Websites (not yet!)</NavItem>
 			</NavList>
 		</NavBarContainer>
 	)
@@ -21,6 +23,7 @@ const NavBarContainer = styled.nav`
   display: grid;
   grid-template-columns: var(--grid);
   padding: 10px 0;
+  z-index:1;
 `
 
 const NavItem = styled.li`

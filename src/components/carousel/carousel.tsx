@@ -51,7 +51,9 @@ export const Carousel:React.FC<IProps> = (props) => {
 			<Modal active={active} toggleModal={toggleModal}>
 				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
 			</Modal>
-			<ResponsiveHeaderToggleButton onClick={()=>handleHeaderClick(props.title)} open={open} id={props.title}>{props.title}</ResponsiveHeaderToggleButton>
+			<ResponsiveHeaderToggleButton onClick={()=>handleHeaderClick(props.title)} open={open} id={props.title}>
+				{open ? 'hide images' : 'view images'}
+			</ResponsiveHeaderToggleButton>
 			<ContainerMain open={open}>
 				<ContainerTop>
 					<CarouselWrapper>
@@ -143,7 +145,11 @@ const ContainerTop = styled.div`
 	margin: 0 auto;
 `
 
-const ModalImg = styled(Img)`
+interface IModalImg {
+	fluid: []
+}
+
+const ModalImg = styled(Img)<IModalImg>`
 	height:500px;
 	width:500px;
 	max-height: 90vh;
@@ -164,11 +170,12 @@ interface IResponsiveHeaderToggleButton {
 const ResponsiveHeaderToggleButton = styled(HeaderToggleButton)<IResponsiveHeaderToggleButton>`
 	background-color: ${props => props.open? "var(--black)" : "inherit"};
 	color: ${props => props.open? "var(--white)" : "inherit"};
+	width: 100%;
+	text-align: center;
 `
 
 interface ISlideContainer {
-	onKeyDown: any
-	// only losers use 'any'
+	onKeyDown: Function
 }
 
 const SlideContainer = styled.div<ISlideContainer>`
@@ -182,12 +189,7 @@ const SlideImg = styled(Img)`
 	width: 300px;
 	max-width: 80vw;
 	max-height: 80vw;
-	/* left: 50%;
-	transform: translateX(27%); */
-	/* TODO fix position */
 	@media (min-width: ${breakPoints.mobile}){
-		/* left: 50%;
-		transform: translateX(27%); */
 		max-height: none;
 	}
 `
@@ -201,6 +203,8 @@ const ThumbnailConatiner = styled.div`
 
 interface IThumbnail {
 	active?: boolean
+	fluid: []
+	onClick: Function
 }
 
 const Thumbnail = styled(Img)<IThumbnail>`

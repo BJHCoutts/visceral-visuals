@@ -80,7 +80,8 @@ export const CarouselContainer: React.FC = () => {
 				galleryTitle={ galleryToggle } 
 				setDigital={ setDigital }
 				setAnalogue={ setAnalogue }
-			/>
+			>
+			</CarouselToggler>
 			<Carousel title={ galleryToggle } >
 				{galleryChildren}
 			</Carousel>

@@ -14,10 +14,10 @@ interface IProps {
 	galleryTitle: string
 }
 	
-export const CarouselToggler:React.FC<IProps> = ({galleryTitle, setDigital, setAnalogue}) => {
+export const CarouselToggler:React.FC<IProps> = ({galleryTitle, setDigital, setAnalogue, children}) => {
 	
 	return(
-		<ImageNavBar>
+		<ImageNavBar id="images">
 			<ImageNavList>
 				<ImageNavItemDigital 
 					onClick = {setDigital}
@@ -32,6 +32,7 @@ export const CarouselToggler:React.FC<IProps> = ({galleryTitle, setDigital, setA
 					Analogue
 				</ImageNavItemAnalogue>
 			</ImageNavList>
+			{children}
 		</ImageNavBar>
 	)
 }
@@ -59,7 +60,6 @@ const ImageNavBar = styled.nav`
   grid-template-columns: var(--grid);
   border-bottom: 5px solid var(--white);
 	width: 100%;
-	margin-bottom: 3em;
 `
 
 
