@@ -54,7 +54,7 @@ const CardImage = styled.img<ICardImage>`
 `
 
 const CardTitle = styled.h3`
-	font: 400 2rem/120% var(--body-font);
+	font: 400 1.6rem/120% var(--body-font);
 	margin-bottom: .6em;
 `
 

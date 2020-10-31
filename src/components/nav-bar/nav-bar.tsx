@@ -2,12 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const NavBar:React.FC = () => {
+
+  const scrollTo = (id:string) => {
+    const el = document.getElementById(id)
+      el? el.scrollIntoView({behavior: "smooth"})
+      :null
+  }
+
 	return(
 		<NavBarContainer>
 			<NavList>
-				<NavItem onClick={() => document.getElementById("images").scrollIntoView({behavior: "smooth"})}>Images</NavItem>
         <NavItem 
-          onClick={() => document.getElementById("websites").scrollIntoView({behavior: "smooth"})}
+          onClick={() => scrollTo("images")}
+        >Images</NavItem>
+        <NavItem 
+          onClick={() => scrollTo("websites")}
         >Websites (wip)</NavItem>
 			</NavList>
 		</NavBarContainer>
