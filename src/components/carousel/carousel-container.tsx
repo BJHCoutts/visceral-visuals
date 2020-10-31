@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { Carousel } from './carousel'
@@ -75,7 +75,7 @@ export const CarouselContainer: React.FC = () => {
 	}
 
 	return(
-		<>
+		<CarouselContainerEl>
 			<CarouselToggler 
 				galleryTitle={ galleryToggle } 
 				setDigital={ setDigital }
@@ -85,6 +85,10 @@ export const CarouselContainer: React.FC = () => {
 			<Carousel title={ galleryToggle } >
 				{galleryChildren}
 			</Carousel>
-		</>
+			</CarouselContainerEl>
 	)
 }
+
+const CarouselContainerEl = styled.section`
+	overflow-x: hidden;
+`

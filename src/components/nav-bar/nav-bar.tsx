@@ -7,7 +7,7 @@ export const NavBar:React.FC = () => {
 			<NavList>
 				<NavItem onClick={() => document.getElementById("images").scrollIntoView({behavior: "smooth"})}>Images</NavItem>
         <NavItem 
-          // onClick={() => document.getElementById("websites").scrollIntoView({behavior: "smooth"})}
+          onClick={() => document.getElementById("websites").scrollIntoView({behavior: "smooth"})}
         >Websites (not yet!)</NavItem>
 			</NavList>
 		</NavBarContainer>

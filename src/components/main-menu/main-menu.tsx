@@ -6,6 +6,7 @@ import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
 import { CarouselContainer } from "../carousel/carousel-container";
+import { Websites } from "../websites/websites";
 
 
 export const MainMenu:React.FC = () => {
@@ -19,17 +20,18 @@ export const MainMenu:React.FC = () => {
             {/* This site is lovingly a WIP, showcasing the creations of Brian Coutts */}
           </Intro>
         </SubHeader>
-				<nav>
-					<NavList>
+					<Menu>
             <MenuItem>
               <Header id="images">Image Galleries</Header>
               <CarouselContainer />
-              <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
-              <br/>
-              {/* <WebSitesMenu title="Websites" id="websites"/> */}
+              <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
+                <HeaderToggleButton>
+                  Print Portfolio
+                </HeaderToggleButton>
+              </PrintPortfolioButton>
+              {/* <Websites id="websites"/> */}
             </MenuItem>
-					</NavList>
-				</nav>
+					</Menu>
 			</SectionContent>
 		</SectionContainer>
 	)
@@ -49,7 +51,7 @@ const MenuItem = styled.li`
   width: 100%;
 `
 
-const NavList = styled.ul`
+const Menu = styled.ul`
   width: 100%;
 `
 
