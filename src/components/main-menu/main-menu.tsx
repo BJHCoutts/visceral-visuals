@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
-import { SubHeader, ExternalLink, Header } from "../shared/type";
+import { SubHeader, ExternalLink } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
 import { CarouselContainer } from "../carousel/carousel-container";
@@ -22,14 +22,14 @@ export const MainMenu:React.FC = () => {
         </SubHeader>
 					<Menu>
             <MenuItem>
-              <Header id="images">Image Galleries</Header>
+              <SubHeader id="images">Image Galleries</SubHeader>
               <CarouselContainer />
               <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
                 <HeaderToggleButton>
                   Print Portfolio
                 </HeaderToggleButton>
               </PrintPortfolioButton>
-              {/* <Websites id="websites"/> */}
+              <Websites id="websites"/>
             </MenuItem>
 					</Menu>
 			</SectionContent>

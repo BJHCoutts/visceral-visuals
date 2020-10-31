@@ -8,7 +8,7 @@ export const NavBar:React.FC = () => {
 				<NavItem onClick={() => document.getElementById("images").scrollIntoView({behavior: "smooth"})}>Images</NavItem>
         <NavItem 
           onClick={() => document.getElementById("websites").scrollIntoView({behavior: "smooth"})}
-        >Websites (not yet!)</NavItem>
+        >Websites (wip)</NavItem>
 			</NavList>
 		</NavBarContainer>
 	)
@@ -30,6 +30,7 @@ const NavItem = styled.li`
   color: var(--white);
   font: 400 1.5rem/2rem var(--display-font);
   cursor: pointer;
+  text-transform: lowercase;
 `
 
 const NavList = styled.ul`

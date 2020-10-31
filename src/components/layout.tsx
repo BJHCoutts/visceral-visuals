@@ -23,7 +23,7 @@ export default (function Layout ({ children }) {
           title
         }
       }
-      bgImage: file(relativePath: {eq: "pinkInk.jpg"}) {
+      bgImage: file(relativePath: {eq: "pinkInkFaded.png"}) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
