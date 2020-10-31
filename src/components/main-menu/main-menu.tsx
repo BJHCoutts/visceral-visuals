@@ -1,54 +1,14 @@
 import React from "react";
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
 
 import { SectionContainer, SectionContent } from "../shared/containers";
-import { Carousel } from "../carousel/carousel";
 import { SubHeader, ExternalLink, Header } from "../shared/type";
 import { HeaderToggleButton } from "../shared/forms";
 import { breakPoints } from "../shared/break-points";
-import { CarouselToggler } from '../carousel/carousel-toggler'
-import WebSitesMenu from "../websites-menu";
+import { CarouselContainer } from "../carousel/carousel-container";
 
 
 export const MainMenu:React.FC = () => {
-
-	const { digitalImages, analogueImages } = useStaticQuery(
-    graphql`
-      query {
-        digitalImages: allFile(filter: {
-          relativeDirectory: {eq: "digital"}
-          })
-          {       
-            edges {
-              node {
-                childImageSharp {
-                  id
-                  fluid {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }          
-          }
-        analogueImages: allFile(filter: {
-          relativeDirectory: {eq: "analogue"}
-          })
-          {       
-            edges {
-              node {
-                childImageSharp {
-                  id
-                  fluid {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }          
-          }
-      }
-    `
-  )
 
 	return(
 		<SectionContainer>
@@ -63,13 +23,7 @@ export const MainMenu:React.FC = () => {
 					<NavList>
             <MenuItem>
               <Header id="images">Image Galleries</Header>
-              <CarouselToggler />
-              {/* <Carousel title="Digital" >
-                {digitalImages.edges}
-              </Carousel>
-              <Carousel title="analogue">
-                {analogueImages.edges}
-              </Carousel> */}
+              <CarouselContainer />
               <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing"><HeaderToggleButton>Print Portfolio</HeaderToggleButton></PrintPortfolioButton>
               <br/>
               {/* <WebSitesMenu title="Websites" id="websites"/> */}

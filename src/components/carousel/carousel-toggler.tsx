@@ -1,29 +1,33 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-enum gallery {
-	digital,
-	analogue
+// import { gallery } from './carousel-container'
+
+interface IProps {
+	// setGalleryToggle: Function
+	// gallery: {
+	// 	digital: number
+	// 	analogue: number
+	// }
+	setDigital: Function
+	setAnalogue: Function
+	galleryTitle: string
 }
 	
-export const CarouselToggler:React.FC = () => {
+export const CarouselToggler:React.FC<IProps> = ({galleryTitle, setDigital, setAnalogue}) => {
 	
-
-	const [galleryToggle, setGalleryToggle] = useState(gallery.analogue)
-
-
 	return(
 		<ImageNavBar>
 			<ImageNavList>
 				<ImageNavItemDigital 
-					onClick = {() => setGalleryToggle(gallery.digital)}
-					active = {galleryToggle}
+					onClick = {setDigital}
+					active = {galleryTitle}
 				>
 					Digital
 				</ImageNavItemDigital>
 				<ImageNavItemAnalogue 
-					onClick = {() => setGalleryToggle(gallery.analogue)}
-					active = {galleryToggle}
+					onClick = {setAnalogue}
+					active = {galleryTitle}
 				>
 					Analogue
 				</ImageNavItemAnalogue>
@@ -33,8 +37,8 @@ export const CarouselToggler:React.FC = () => {
 }
 
 const ImageNavItemDigital = styled.li`
-	color: ${(props) => props.active === gallery.digital ? 'var(--black)' : 'var(--white)'};
-	background-color: ${(props) => props.active === gallery.digital ? 'var(--white)' : 'var(--black)'};
+	color: ${(props) => props.active === 'Digital' ? 'var(--black)' : 'var(--white)'};
+	background-color: ${(props) => props.active === 'Digital' ? 'var(--white)' : 'var(--black)'};
 	font: 400 1.5rem/2rem var(--display-font);
 	width:100%;
 	text-align:center;
@@ -42,11 +46,12 @@ const ImageNavItemDigital = styled.li`
 `
 
 const ImageNavItemAnalogue = styled.li`
-	color: ${(props) => props.active === gallery.analogue ? 'var(--black)' : 'var(--white)'};
-	background-color: ${(props) => props.active === gallery.analogue ? 'var(--white)' : 'var(--black)'};
+	color: ${(props) => props.active === 'Analogue' ? 'var(--black)' : 'var(--white)'};
+	background-color: ${(props) => props.active === 'Analogue' ? 'var(--white)' : 'var(--black)'};
 	font: 400 1.5rem/2rem var(--display-font);
 	width:100%;
 	text-align:center;
+	cursor: pointer;
 `
 
 const ImageNavBar = styled.nav`
