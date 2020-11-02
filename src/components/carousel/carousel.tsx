@@ -74,10 +74,10 @@ export const Carousel:React.FC<IProps> = (props) => {
 
 				<ThumbnailConatiner>
 					{props.children.map((thumbnail, i) =>
-						// <div key={i} onClick={()=>handleThumbnailClick(i)} onKeyDown={()=>setCurrentSlide(i)} >
+						<div key={i} onClick={()=>handleThumbnailClick(i)} onKeyDown={()=>setCurrentSlide(i)} >
 							<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}} onClick={()=>handleThumbnailClick(i)} onKeyDown={()=>setCurrentSlide(i)} 
 							/>
-						// </div>
+						</div>
 					)}
 				</ThumbnailConatiner>
 			</ContainerMain>

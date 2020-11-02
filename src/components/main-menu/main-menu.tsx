@@ -58,7 +58,10 @@ const Menu = styled.ul`
 const PrintPortfolioButton = styled(ExternalLink)`
   display: inline-block;
   margin-bottom: 1.5em;
+  transition: font-size .3s ease-in;
   @media (min-width: ${breakPoints.tablet}){
     margin-bottom: 3em;
+  }
+  &:hover {
   }
 `

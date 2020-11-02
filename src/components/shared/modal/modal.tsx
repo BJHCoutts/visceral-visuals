@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
 interface IProps {
@@ -8,17 +8,17 @@ interface IProps {
 	toggleModal: Function
 }
 
-export const Modal:React.FC<IProps> = (props) => {
+export const Modal:React.FC<IProps> = ({active, toggleModal, children}) => {
 
 
 	return(
 		<>
-			{props.active && ReactDOM.createPortal(
-				<Dimmer onClick={props.toggleModal} active={props.active}>
+			{active && createPortal(
+				<Dimmer onClick={toggleModal} active={active}>
 					<Content 
 						// onClick={e => e.stopPropagation()}
 					>
-						{props.children}
+						{children}
 					</Content>
 				</Dimmer>
 			,document.body)}

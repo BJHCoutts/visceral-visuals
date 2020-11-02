@@ -17,8 +17,18 @@ export const ExternalLink = styled.a.attrs(props => ({
 }))`
   color: var(--primary);
   text-decoration: none;
+  transition: 
+    text-decoration .3s ease-in,
+    opacity .3s ease-in,
+    color .3s ease-in;
   &:visited {
-    color: var(--mid-grey);
+    color: inherit;
+    opacity: .7;
+    font-style: italic;
+  }
+  &:hover{
+    opacity: .7;
+    text-decoration: underline;
   }
 `
 
@@ -40,10 +50,10 @@ export const HR = styled.hr`
 `
 
 export const SubHeader = styled.h2`
-  margin-bottom: 1.5em;
   font: 600 2.4rem/120% var(--display-font);
+  margin-bottom: 1.4em;
   @media (min-width: ${breakPoints.tablet}){
-    margin-bottom: 4em;
+    margin-bottom: 1.6em;
   }
 `
 

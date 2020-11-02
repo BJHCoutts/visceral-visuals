@@ -1,21 +1,20 @@
 import * as React from "react"
-// import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes } from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
-// import { breakPoints } from "./shared/break-points"
 // import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 // import { useScrollPosition } from './shared/use-scroll-position'
 
 import { Footer } from "./footer/footer"
 import { Header } from "./header/header"
 import { NavBar } from './nav-bar/nav-bar'
+import { GlobalStyle } from "../styles/global"
 
 interface Props {
   children: React.ReactNode
 }
 
-export default (function Layout ({ children }) {
+export const Layout:React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -35,12 +34,12 @@ export default (function Layout ({ children }) {
 
   const bgImagePath = data.bgImage.childImageSharp.fluid
 
-  const scrollTo = (id:string) => {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({behavior:"smooth", block:"center"})
-    }
-  }
+  // const scrollTo = (id:string) => {
+  //   const el = document.getElementById(id)
+  //   if (el) {
+  //     el.scrollIntoView({behavior:"smooth", block:"center"})
+  //   }
+  // }
   // const [ sticky, setSticky ] = React.useState(false)
   // const [ open, setOpen ] = React.useState(false)
   // const [ logoHeight, setLogoHeight] = React.useState('300')
@@ -56,20 +55,19 @@ export default (function Layout ({ children }) {
   // )
 
   return (
-    <ParallaxBgImg fluid={bgImagePath} >
-      <Header />
-      <NavBar />
-      <LayoutContainer >
-        <Content>{children}</Content>
-        <Footer />
-      </LayoutContainer>
-    </ParallaxBgImg>
+    <>
+      <GlobalStyle/>
+      <ParallaxBgImg fluid={bgImagePath} >
+        <Header />
+        <NavBar />
+        <LayoutContainer >
+          <Content>{children}</Content>
+          <Footer />
+        </LayoutContainer>
+      </ParallaxBgImg>
+    </>
   )
-}) as React.FC<Props>
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
+}
 
 const Content = styled.div`
   display: grid;
