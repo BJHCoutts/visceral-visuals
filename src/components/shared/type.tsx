@@ -11,24 +11,24 @@ export const BRMobile = styled.br`
   }
 `
 
-export const ExternalLink = styled.a.attrs(props => ({
+export const ExternalLink = styled.a.attrs(() => ({
   target: "_blank",
   rel: "noopener noreferrer"
 }))`
   color: var(--primary);
-  text-decoration: none;
+  text-decoration: underline;
   transition: 
     text-decoration .3s ease-in,
     opacity .3s ease-in,
     color .3s ease-in;
+  &:hover {
+    opacity: .7;
+    text-decoration: underline;
+  }
   &:visited {
     color: inherit;
     opacity: .7;
     font-style: italic;
-  }
-  &:hover{
-    opacity: .7;
-    text-decoration: underline;
   }
 `
 

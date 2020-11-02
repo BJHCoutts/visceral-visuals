@@ -9,10 +9,8 @@ import { Footer } from "./footer/footer"
 import { Header } from "./header/header"
 import { NavBar } from './nav-bar/nav-bar'
 import { GlobalStyle } from "../styles/global"
-
-interface Props {
-  children: React.ReactNode
-}
+import { ContextProvider } from "./context/context"
+import { Gears } from "./gears/gears"
 
 export const Layout:React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -55,9 +53,10 @@ export const Layout:React.FC = ({ children }) => {
   // )
 
   return (
-    <>
+    <ContextProvider>
       <GlobalStyle/>
       <ParallaxBgImg fluid={bgImagePath} >
+        <Gears />
         <Header />
         <NavBar />
         <LayoutContainer >
@@ -65,7 +64,7 @@ export const Layout:React.FC = ({ children }) => {
           <Footer />
         </LayoutContainer>
       </ParallaxBgImg>
-    </>
+    </ContextProvider>
   )
 }
 
@@ -84,6 +83,7 @@ const fadeIn = keyframes`
 `
 
 const LayoutContainer = styled.div`
+  background-image: linear-gradient(90deg, hsla( 0, 0%, 100%, .2), hsla( 0, 0%, 100%, 1), hsla( 0, 0%, 100%, .3));
 `
 
 const ParallaxBgImg = styled(BackgroundImage)`

@@ -1,8 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
+import cog from '../../images/cog.png'
+import { Context } from '../context/context'
 
 export const Gears:React.FC = () => {
 	return(
-
+		<Context.Consumer>
+			{ context => (
+				<Container>
+					<Cog src={cog} id='cog' rotation={context}/>
+					{context}
+					<Cog src={cog} id='cog' rotation={context}/>
+				</Container>
+			)}
+		</Context.Consumer>		
 	)
 }
+
+interface ICog {
+	rotation: number
+}
+
+const Cog = styled.img<ICog>`
+	transform: rotate(-${props => props.rotation/10}deg);
+	:last-child {
+		grid-column:3;
+		transform: rotate(${props => props.rotation/10}deg);
+	}
+	`
+
+const Container = styled.div`
+	display: grid;
+	height: 400vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	grid-template-columns: var(--grid);
+`

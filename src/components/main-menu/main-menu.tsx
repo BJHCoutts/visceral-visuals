@@ -8,7 +8,6 @@ import { breakPoints } from "../shared/break-points";
 import { CarouselContainer } from "../carousel/carousel-container";
 import { Websites } from "../websites/websites";
 
-
 export const MainMenu:React.FC = () => {
 
 	return(
@@ -22,14 +21,15 @@ export const MainMenu:React.FC = () => {
         </SubHeader>
 					<Menu>
             <MenuItem>
-              <SubHeader id="images">Image Galleries</SubHeader>
+              <MainMenuSubHeader id="images">Image Galleries</MainMenuSubHeader>
               <CarouselContainer />
               <PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
                 <HeaderToggleButton>
                   Print Portfolio
                 </HeaderToggleButton>
               </PrintPortfolioButton>
-              <Websites id="websites"/>
+              <MainMenuSubHeader id="websites">Websites</MainMenuSubHeader>
+              <Websites />
             </MenuItem>
 					</Menu>
 			</SectionContent>
@@ -39,10 +39,13 @@ export const MainMenu:React.FC = () => {
 
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);
-  color: black;
+  color: var(--black);
   @media (min-width: ${breakPoints.tablet}){
     font-size:1.2rem;
   }
+`
+
+const MainMenuSubHeader = styled(SubHeader)`
 `
 
 const MenuItem = styled.li`

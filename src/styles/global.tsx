@@ -65,6 +65,10 @@ export const GlobalStyle = createGlobalStyle`
 		list-style-type: none;
 	}
 
+	img {
+		max-width: 100%;
+	}
+
 	::selection {
 		background-color: var(--primary);
 		color: var(--black);

@@ -7,7 +7,6 @@ import { WebsiteCard } from './website-card'
 import { SubHeader } from '../shared/type'
 
 interface IProps {
-	id: string
 }
 
 export const Websites:React.FC<IProps> = () => {
@@ -27,7 +26,6 @@ export const Websites:React.FC<IProps> = () => {
 			>
 			{open ? 'hide websites' : 'view websites'}
 			</ResponsiveHeaderToggleButton> */}
-				<SubHeader>Websites</SubHeader>
 				<WebsiteList>
 					<WebsiteCard title="Who Studio" imagePath={''} url={'https://whostudio.com/'}>
 						Website description Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, illo.

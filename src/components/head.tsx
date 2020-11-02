@@ -2,7 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-import faviconPath from "../icons/favicon.ico"
+import faviconPath from '../icons/favicon.ico'
 
 interface Props {
   title: string
