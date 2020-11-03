@@ -30,7 +30,6 @@ const Cog = styled.img<ICog>`
 
 const Container = styled.div`
 	display: grid;
-	/* height: 400vh; */
 	position: fixed;
 	left: 0;
 	top: 0;

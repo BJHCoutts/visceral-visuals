@@ -13,12 +13,9 @@ export const MainMenu:React.FC = () => {
 	return(
 		<SectionContainer>
 			<SectionContent>
-				<SubHeader>
           <Intro>
             I am a ʕ•́ᴥ•̀ʔっ♡ WIP site
-            {/* This site is lovingly a WIP, showcasing the creations of Brian Coutts */}
           </Intro>
-        </SubHeader>
 					<Menu>
             <MenuItem>
               <MainMenuSubHeader id="images">Image Galleries</MainMenuSubHeader>
@@ -40,12 +37,14 @@ export const MainMenu:React.FC = () => {
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);
   color: var(--black);
+  margin-bottom: -3em;
   @media (min-width: ${breakPoints.tablet}){
     font-size:1.2rem;
   }
 `
 
 const MainMenuSubHeader = styled(SubHeader)`
+  padding-top: 3em;
 `
 
 const MenuItem = styled.li`
