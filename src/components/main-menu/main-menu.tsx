@@ -37,14 +37,16 @@ export const MainMenu:React.FC = () => {
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);
   color: var(--black);
-  margin-bottom: -3em;
   @media (min-width: ${breakPoints.tablet}){
     font-size:1.2rem;
   }
 `
 
 const MainMenuSubHeader = styled(SubHeader)`
-  padding-top: 3em;
+  padding-top: 2em;
+  @media (min-width: ${breakPoints.tablet}){
+    padding-top: 3em;
+  }
 `
 
 const MenuItem = styled.li`
@@ -59,10 +61,10 @@ const Menu = styled.ul`
 
 const PrintPortfolioButton = styled(ExternalLink)`
   display: inline-block;
-  margin-bottom: 1.5em;
+  /* margin-bottom: 1.5em; */
   transition: font-size .3s ease-in;
   @media (min-width: ${breakPoints.tablet}){
-    margin-bottom: 3em;
+    /* margin-bottom: 3em; */
   }
   &:hover {
   }
