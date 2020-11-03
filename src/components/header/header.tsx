@@ -4,9 +4,6 @@ import styled, {keyframes, StyledComponent} from "styled-components"
 import VVLogo from "../../logos/GearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
-import { Context } from "../context/context";
-import { Gears } from "../gears/gears";
-
 
 export const Header:React.FC = () => {
 
@@ -19,7 +16,6 @@ export const Header:React.FC = () => {
     </HeaderContainer>
   )
 }
-
 
 const fadeIn = keyframes`
   0%{

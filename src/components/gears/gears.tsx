@@ -9,7 +9,6 @@ export const Gears:React.FC = () => {
 			{ context => (
 				<Container>
 					<Cog src={cog} id='cog' rotation={context}/>
-					{context}
 					<Cog src={cog} id='cog' rotation={context}/>
 				</Container>
 			)}
@@ -22,19 +21,20 @@ interface ICog {
 }
 
 const Cog = styled.img<ICog>`
-	transform: rotate(-${props => props.rotation/10}deg);
+	transform: rotate(-${props => props.rotation/16}deg);
 	:last-child {
 		grid-column:3;
-		transform: rotate(${props => props.rotation/10}deg);
+		transform: rotate(${props => props.rotation/16}deg);
 	}
 	`
 
 const Container = styled.div`
 	display: grid;
-	height: 400vh;
+	/* height: 400vh; */
 	position: fixed;
 	left: 0;
 	top: 0;
 	right: 0;
 	grid-template-columns: var(--grid);
+	pointer-events:none;
 `

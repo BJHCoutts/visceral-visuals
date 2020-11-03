@@ -4,17 +4,17 @@ import { breakPoints } from '../shared/break-points'
 import { ExternalLink } from '../shared/type'
 
 interface IWebsiteCard {
-	title: string
+	name: string
 	imagePath: string
 	url: string
 }
 
-export const WebsiteCard:React.FC<IWebsiteCard> = ({imagePath, title, url, children}) => {
+export const WebsiteCard:React.FC<IWebsiteCard> = ({imagePath,name, url, children}) => {
 	return(
 		<CardContainer>
 			<CardImage src={imagePath}/>
 			<CardBody>
-				<CardTitle><ExternalLink href={url}>{title}</ExternalLink></CardTitle>
+				<CardName><ExternalLink href={url}>{name}</ExternalLink></CardName>
 				{/* <HR /> */}
 				<BodyText>
 				{children}
@@ -53,7 +53,7 @@ interface ICardImage {
 const CardImage = styled.img<ICardImage>`
 `
 
-const CardTitle = styled.h3`
+const CardName = styled.h3`
 	font: 400 1.6rem/120% var(--body-font);
 	margin-bottom: .6em;
 `
