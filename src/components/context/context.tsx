@@ -11,7 +11,6 @@ const ContextProvider: FC = ({children}) => {
 
 	useEffect ( () => {
 		document.addEventListener('scroll', () => {
-			console.log(window.scrollY)
 			setScrollPosition(window.scrollY)
 		})
 	})

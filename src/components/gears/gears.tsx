@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import cog from '../../images/cog.png'
+import cog from '../../icons/cog.png'
 import { Context } from '../context/context'
 
 export const Gears:React.FC = () => {

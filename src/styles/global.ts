@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
 		--black: rgb(21, 53, 74, 0.8);
 		--black-transparent: rgb(21, 53, 74, 0.5);
 		--mid-grey: hsl(0,0%,50%);
+		--pink: hsl(354, 84, 90);
+		--green: hsl(174, 80, 10);
 		
 		--primary: #334355;
 		--primary-transparent: rgba(51, 67, 85, .75);
@@ -39,13 +41,15 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+		transition: color .2s ease-in;
 	}
 
 	body {
 		overflow-y: scroll;
 		scroll-behavior: smooth;
 		background-color: var(--white);
-		color: var(--black);
+		color: ${({theme}) => theme.text};
+		/* color: var(--black); */
 		font-family: var(--body-font);
 	}
 
