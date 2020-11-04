@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
@@ -31,13 +31,15 @@ export const Layout:React.FC = ({ children }) => {
 
   const bgImagePath = data.bgImage.childImageSharp.fluid
 
+  const [ theme, setTheme ] = useState('light')
+
   return (
-    <ThemeProvider theme={ lightTheme } >
+    <ThemeProvider theme={ theme === 'light' ? lightTheme : darkTheme } >
       <ContextProvider>
         <GlobalStyle/>
         <ParallaxBgImg fluid={bgImagePath} >
           <Gears />
-          <Header />
+          <Header setTheme={setTheme} />
           <NavBar />
           <LayoutContainer >
             <Content>{children}</Content>

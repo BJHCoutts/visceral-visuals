@@ -4,18 +4,31 @@ import styled, {keyframes, StyledComponent} from "styled-components"
 import VVLogo from "../../logos/GearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
+import { Button } from "../shared/forms"
 
-export const Header:React.FC = () => {
+interface IProps {
+  setTheme: Function
+}
+
+export const Header:React.FC<IProps> = ({setTheme}) => {
 
   return (
     <HeaderContainer>
       <HeaderContent>
         <LogoImg src={VVLogo} alt="Visceral Visuals logo"/>
         <Subtitle>by Brian Coutts</Subtitle>
+        <ThemeButtonContainer>
+          <LightThemeButton onClick={() => setTheme('light')}>Light Theme</LightThemeButton>
+          <DarkThemeButton onClick={() => setTheme('dark')}>Dark Theme</DarkThemeButton>
+        </ThemeButtonContainer>
        </HeaderContent>
     </HeaderContainer>
   )
 }
+
+const DarkThemeButton = styled(Button)`
+  text-transform: lowercase;
+`
 
 const fadeIn = keyframes`
   0%{
@@ -35,6 +48,10 @@ const HeaderContent = styled(SectionContent)`
   place-items: center;
 `
 
+const LightThemeButton = styled(Button)`
+  text-transform: lowercase;
+`
+
 const LogoImg = styled.img`
   display:block;
   width:100%;
@@ -51,4 +68,12 @@ const Subtitle = styled.h2`
   text-transform: lowercase;
   font-variant:small-caps;
   letter-spacing: .08em;
+  margin-bottom: 1em;
+`
+
+const ThemeButtonContainer = styled.div`
+  display: flex;
+  max-width: 300px;
+  justify-content: space-around;
+  margin: 0 auto;
 `
