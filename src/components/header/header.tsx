@@ -1,7 +1,7 @@
 import * as React from "react"
-import styled, {keyframes, StyledComponent} from "styled-components"
+import styled, { keyframes } from "styled-components"
 
-import VVLogo from "../../logos/GearsFeather.svg"
+import VVLogo from "../../logos/VVLogoGearsFeather.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
 import { Button } from "../shared/forms"
