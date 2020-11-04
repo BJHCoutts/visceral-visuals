@@ -45,7 +45,8 @@ export const GlobalStyle = createGlobalStyle`
 		overflow-y: scroll;
 		scroll-behavior: smooth;
 		background-color: var(--white);
-		color: var(--black);
+		color: ${({theme}) => theme.text};
+		/* color: var(--black); */
 		font-family: var(--body-font);
 	}
 

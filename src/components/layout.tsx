@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { keyframes } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
 import { Footer } from "./footer/footer"
@@ -9,6 +9,7 @@ import { NavBar } from './nav-bar/nav-bar'
 import { GlobalStyle } from "../styles/global"
 import { ContextProvider } from "./context/context"
 import { Gears } from "./gears/gears"
+import { lightTheme, darkTheme } from "../styles/theme"
 
 export const Layout:React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,18 +32,20 @@ export const Layout:React.FC = ({ children }) => {
   const bgImagePath = data.bgImage.childImageSharp.fluid
 
   return (
-    <ContextProvider>
-      <GlobalStyle/>
-      <ParallaxBgImg fluid={bgImagePath} >
-        <Gears />
-        <Header />
-        <NavBar />
-        <LayoutContainer >
-          <Content>{children}</Content>
-          <Footer />
-        </LayoutContainer>
-      </ParallaxBgImg>
-    </ContextProvider>
+    <ThemeProvider theme={ lightTheme } >
+      <ContextProvider>
+        <GlobalStyle/>
+        <ParallaxBgImg fluid={bgImagePath} >
+          <Gears />
+          <Header />
+          <NavBar />
+          <LayoutContainer >
+            <Content>{children}</Content>
+            <Footer />
+          </LayoutContainer>
+        </ParallaxBgImg>
+      </ContextProvider>
+    </ThemeProvider>
   )
 }
 
