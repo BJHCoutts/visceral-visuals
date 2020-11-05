@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 		--black: rgb(21, 53, 74, 0.8);
 		--black-transparent: rgb(21, 53, 74, 0.5);
 		--mid-grey: hsl(0,0%,50%);
-		--pink: hsl(354, 84, 90);
+		--pink: hsl(354, 84%, 90%);
 		--green: hsl(174, 80, 10);
 		
 		--primary: #334355;
@@ -33,7 +33,12 @@ export const GlobalStyle = createGlobalStyle`
 		--section-padding-mobile: 2em 0 1em 0;
 		--section-padding-desktop: 2.5em 0 3.5em 0;
 		
-		--shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.075);
+		--shadow: 4px 4px 6px 6px rgba(0, 0, 0, 0.1);
+
+		--text-colour: ${({theme}) => theme.textColour};
+		--text-reversed: ${({theme}) => theme.textReversed};
+		--gradient-colour: ${({theme}) => theme.gradientColour};
+		/* --container:  */
 		
 	}
 
@@ -42,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		transition: color .2s ease-in;
+	
 	}
 
 	body {

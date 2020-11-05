@@ -1,18 +1,18 @@
 export const lightTheme = {
-	text: 'var(--black)',
+  textColour: 'var(--black)',
+  textReversed: 'var(--pink)',
+  gradientColour: 'linear-gradient(hsla( 0, 0%, 100%, .2), hsla( 0, 0%, 100%, 1), hsla( 0, 0%, 100%, .3))',
+
 	// containerColor:,
 	// siteBG: ,
+  
 
-  // body: '#E2E2E2',
-  // text: '#363537',
-  // toggleBorder: '#FFF',
-  // gradient: 'linear-gradient(#39598A, #79D7ED)',
 }
 
 export const darkTheme = {
-	text: 'var(--white)',
-  // body: '#363537',
-  // text: '#FAFAFA',
-  // toggleBorder: '#6B8096',
-  // gradient: 'linear-gradient(#091236, #1E215D)',
+  textColour: 'var(--pink)',
+  textReversed: 'var(--black)',
+  gradientColour: 'linear-gradient(hsla( 0, 0%, 0%, .2), hsla( 0, 0%, 0%, 1), hsla( 0, 0%, 0%, .3))',
+
+
 }

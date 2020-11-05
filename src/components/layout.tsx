@@ -26,10 +26,18 @@ export const Layout:React.FC = ({ children }) => {
           }
         }
       }
+      bgImageDarkMode: file(relativePath: {eq: "pinkInkFadedReversed.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `)
 
   const bgImagePath = data.bgImage.childImageSharp.fluid
+  const bgImageDarkModePath = data.bgImageDarkMode.childImageSharp.fluid
 
   const [ theme, setTheme ] = useState('light')
 
@@ -37,9 +45,9 @@ export const Layout:React.FC = ({ children }) => {
     <ThemeProvider theme={ theme === 'light' ? lightTheme : darkTheme } >
       <ContextProvider>
         <GlobalStyle/>
-        <ParallaxBgImg fluid={bgImagePath} >
-          <Gears />
-          <Header setTheme={setTheme} />
+        <ParallaxBgImg fluid={theme === 'light' ? bgImagePath : bgImageDarkModePath} >
+          <Gears theme={theme}/>
+          <Header theme ={theme} setTheme={setTheme} />
           <NavBar />
           <LayoutContainer >
             <Content>{children}</Content>
@@ -57,7 +65,7 @@ const Content = styled.div`
 `
 
 const LayoutContainer = styled.div`
-  background-image: linear-gradient(90deg, hsla( 0, 0%, 100%, .2), hsla( 0, 0%, 100%, 1), hsla( 0, 0%, 100%, .3));
+  background-image: var(--gradient-colour);
 `
 
 const ParallaxBgImg = styled(BackgroundImage)`

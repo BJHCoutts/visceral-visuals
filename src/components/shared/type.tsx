@@ -33,7 +33,7 @@ export const ExternalLink = styled.a.attrs(() => ({
 `
 
 export const Header = styled.h1`
-  color: var(--black);
+  color: var(--text-colour);
   margin-bottom: 1.5em;
   font: 600 3rem/130% var(--display-font);
 `
@@ -52,11 +52,12 @@ export const HR = styled.hr`
 export const SubHeader = styled.h2`
   font: 600 2.4rem/120% var(--display-font);
   margin-bottom: 1.4em;
+  color: var(--text-colour);
   @media (min-width: ${breakPoints.tablet}){
     margin-bottom: 1.6em;
   }
 `
 
-export const SubHeaderCenter = styled.h2`
+export const SubHeaderCenter = styled(SubHeader)`
 	text-align: center;
 `
