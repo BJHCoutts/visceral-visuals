@@ -36,7 +36,7 @@ export const MainMenu:React.FC = () => {
 
 const Intro = styled.span`
   font: 700 1rem/0rem var(--body-font);
-  color: var(--black);
+  color: var(--text-colour);
   @media (min-width: ${breakPoints.tablet}){
     font-size:1.2rem;
   }

@@ -39,6 +39,8 @@ const CardContainer = styled.li`
   padding: 32px;
   color: var(--white);
   margin-bottom: 32px;
+	opacity: .8;
+	box-shadow: var(--shadow);
 	@media only screen and (min-width: ${breakPoints.tablet}) {
     display: flex;
     flex-flow: row nowrap;
@@ -54,6 +56,7 @@ const CardImage = styled.img<ICardImage>`
 `
 
 const CardName = styled.h3`
+	color:var(--pink);
 	font: 400 1.6rem/120% var(--body-font);
 	margin-bottom: .6em;
 `

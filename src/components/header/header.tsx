@@ -2,21 +2,26 @@ import * as React from "react"
 import styled, { keyframes } from "styled-components"
 
 import VVLogo from "../../logos/VVLogoGearsFeather.svg"
+import VVLogoDarkMode from "../../logos/VVGearsFeatherLogoDarkMode.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
 import { Button } from "../shared/forms"
 
 interface IProps {
+  theme: string
   setTheme: Function
 }
 
-export const Header:React.FC<IProps> = ({setTheme}) => {
+export const Header:React.FC<IProps> = ({theme, setTheme}) => {
 
   return (
     <HeaderContainer>
       <HeaderContent>
-        <LogoImg src={VVLogo} alt="Visceral Visuals logo"/>
+      { theme === 'dark' ? 
+      <LogoImgDarkMode src={VVLogoDarkMode} alt="Visceral Visuals logo"/>
+      : <LogoImg src={VVLogo} alt="Visceral Visuals logo"/>}
         <Subtitle>by Brian Coutts</Subtitle>
+        <Subtitle>selected theme: {theme} </Subtitle>
         <ThemeButtonContainer>
           <LightThemeButton onClick={() => setTheme('light')}>Light Theme</LightThemeButton>
           <DarkThemeButton onClick={() => setTheme('dark')}>Dark Theme</DarkThemeButton>
@@ -40,7 +45,7 @@ const fadeIn = keyframes`
 `
 
 const HeaderContainer = styled(SectionContainer)`
-  background-image: linear-gradient(hsla( 0, 0%, 100%, .2), hsla( 0, 0%, 100%, 1), hsla( 0, 0%, 100%, .3));
+  background-image: var(--gradient-colour);
   overflow-x: hidden;
 `
 
@@ -62,6 +67,16 @@ const LogoImg = styled.img`
     max-width: 350px;
   }
 `
+const LogoImgDarkMode = styled.img`
+  display:block;
+  width:100%;
+  height:auto;
+  animation: ${fadeIn} 1s ease-in;
+  margin: 0 auto;
+  @media (min-width: ${breakPoints.tablet}){
+    max-width: 350px;
+  }
+`
 
 const Subtitle = styled.h2`
   text-align:center;
@@ -69,6 +84,7 @@ const Subtitle = styled.h2`
   font-variant:small-caps;
   letter-spacing: .08em;
   margin-bottom: 1em;
+  color: var(--text-colour);
 `
 
 const ThemeButtonContainer = styled.div`
