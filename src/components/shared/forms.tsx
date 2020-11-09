@@ -59,6 +59,7 @@ export const HeaderToggleButton = styled(Header)`
 	padding: 0 3px;
 	font-size: 1.5rem;
 	font-family: var(--display-font);
+	color: var(--text-color);
 	&:hover{
 		background-color: var(--black);
 		color: var(--white);

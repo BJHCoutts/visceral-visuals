@@ -34,6 +34,15 @@ export const Header:React.FC<IProps> = ({theme, setTheme}) => {
 
 const DarkThemeButton = styled(Button)`
   text-transform: lowercase;
+  background-color: var(--black);
+  color: var(--white);
+  border-color: var(--white);
+  &:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+    text-decoration: underline;
+  }
 `
 
 const HeaderContainer = styled(SectionContainer)`
@@ -51,6 +60,11 @@ const HeaderContent = styled(SectionContent)`
 
 const LightThemeButton = styled(Button)`
   text-transform: lowercase;
+    border-color: var(--black);
+  &:hover {
+    border-color: var(--white);
+    text-decoration: underline;
+  }
 `
 
 const LogoImg = styled.img`

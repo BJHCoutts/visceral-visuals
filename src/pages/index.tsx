@@ -28,7 +28,7 @@ const IndexPage: React.FC = () => {
                   Hello!
                 </BodyTextP>
                 <BodyTextP>
-                  My name is Brian Coutts and this is an ever-evolving playground site, meant for me to implement front end web development curiosities of mine, and to act as a portfolio site to display my web development and design projects, as well as my artistic and illustrative endevours. If you are interested in reaching out to me please contact me at <ExternalLink href='mailto:bjhcoutts@gmail.com'>bjhcoutts@gmail.com</ExternalLink>.
+                  My name is Brian Coutts and this is an ever-evolving playground site, meant for me to implement front-end web development curiosities of mine, and to act as a portfolio site to display my web development and design projects, as well as my artistic and illustrative endevours. If you are interested in reaching out to me please contact me at <ExternalLink href='mailto:bjhcoutts@gmail.com'>bjhcoutts@gmail.com</ExternalLink>.
                 </BodyTextP>
               </BodyTextContainer>
           </SectionContent>
