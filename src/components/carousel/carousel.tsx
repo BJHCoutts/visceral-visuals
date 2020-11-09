@@ -168,8 +168,7 @@ interface IResponsiveHeaderToggleButton {
 }
 
 const ResponsiveHeaderToggleButton = styled(HeaderToggleButton)<IResponsiveHeaderToggleButton>`
-	background-color: ${props => props.open? "var(--black)" : "inherit"};
-	color: ${props => props.open? "var(--white)" : "inherit"};
+	color:var(--text-colour);
 	width: 100%;
 	text-align: center;
 `

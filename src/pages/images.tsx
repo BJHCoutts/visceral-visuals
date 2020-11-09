@@ -7,8 +7,7 @@ import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 import { breakPoints } from "../components/shared/break-points"
 import { SectionContainer, SectionContent } from "../components/shared/containers"
-import { HeaderToggleButton } from "../components/shared/forms"
-import { ExternalLink, Header } from "../components/shared/type"
+import { ExternalLink, Header, LinkButton, SubHeader } from "../components/shared/type"
 
 const ImagesPage: React.FC = () => {
 
@@ -21,11 +20,12 @@ const ImagesPage: React.FC = () => {
 					<SectionContent>
 						<Header>Image Galleries</Header>
 						<CarouselContainer />
-						<PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
-							<HeaderToggleButton>
-								Print Portfolio
-							</HeaderToggleButton>
-						</PrintPortfolioButton>
+            <SubHeader>PDF's for Download</SubHeader>
+						<PrintPortfolioButtonLink href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
+							<LinkButton>
+                Print Portfolio
+							</LinkButton>
+						</PrintPortfolioButtonLink>
 					</SectionContent>
 				</SectionContainer>
       </Layout>      
@@ -33,14 +33,14 @@ const ImagesPage: React.FC = () => {
   )
 }
 
-const PrintPortfolioButton = styled(ExternalLink)`
+const PrintPortfolioButtonLink = styled(ExternalLink)`
   display: inline-block;
-  /* margin-bottom: 1.5em; */
   transition: font-size .3s ease-in;
+  opacity:1;
   @media (min-width: ${breakPoints.tablet}){
-    /* margin-bottom: 3em; */
   }
   &:hover {
+    opacity:1;
   }
 `
 

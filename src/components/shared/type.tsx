@@ -71,3 +71,26 @@ export const BodyTextP = styled.p`
 
 export const BodyTextContainer = styled.section`
 `
+
+export const LinkButton = styled(Header)`
+  position: relative;
+	cursor: pointer;
+	display:inline-block;
+	border: 2px solid var(--black);
+	padding: 0 3px;
+	font-size: 1.5rem;
+	font-family: var(--display-font);
+  color: var(--text-colour);
+	&:hover{
+		background-color: var(--black);
+		color: var(--white);
+		transition: all .2s ease-in;
+	}
+	&:focus{
+		background-color: var(--black);
+		color: var(--white);
+	}
+	@media (min-width: ${breakPoints.tablet}) {
+		font-size: 1.75rem;
+	}	
+`
