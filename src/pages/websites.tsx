@@ -6,7 +6,7 @@ import { Layout } from "../components/layout"
 import SEO from "../components/seo"
 import { breakPoints } from "../components/shared/break-points"
 import { SectionContainer, SectionContent } from "../components/shared/containers"
-import { SubHeader } from "../components/shared/type"
+import { Header } from "../components/shared/type"
 import { Websites } from "../components/websites/websites"
 
 const WebsitesPage: React.FC = () => {
@@ -18,7 +18,7 @@ const WebsitesPage: React.FC = () => {
       <Layout>
 				<SectionContainer>
 					<SectionContent>
-						<MainMenuSubHeader id="images">Websites</MainMenuSubHeader>
+						<Header>Websites</Header>
 						<Websites/>
 					</SectionContent>
 				</SectionContainer>
@@ -26,12 +26,5 @@ const WebsitesPage: React.FC = () => {
     </>
   )
 }
-
-const MainMenuSubHeader = styled(SubHeader)`
-  padding-top: 2em;
-  @media (min-width: ${breakPoints.tablet}){
-    padding-top: 3em;
-  }
-`
 
 export default WebsitesPage

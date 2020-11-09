@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { breakPoints } from "../components/shared/break-points"
 import { SectionContainer, SectionContent } from "../components/shared/containers"
 import { HeaderToggleButton } from "../components/shared/forms"
-import { ExternalLink, SubHeader } from "../components/shared/type"
+import { ExternalLink, Header } from "../components/shared/type"
 
 const ImagesPage: React.FC = () => {
 
@@ -19,7 +19,7 @@ const ImagesPage: React.FC = () => {
       <Layout>
 				<SectionContainer>
 					<SectionContent>
-						<MainMenuSubHeader id="images">Image Galleries</MainMenuSubHeader>
+						<Header>Image Galleries</Header>
 						<CarouselContainer />
 						<PrintPortfolioButton href="https://drive.google.com/file/d/1E8tXw5MDEH0-iQohUQ8bHegcbAUuVuKe/view?usp=sharing">
 							<HeaderToggleButton>
@@ -32,13 +32,6 @@ const ImagesPage: React.FC = () => {
     </>
   )
 }
-
-const MainMenuSubHeader = styled(SubHeader)`
-  padding-top: 2em;
-  @media (min-width: ${breakPoints.tablet}){
-    padding-top: 3em;
-  }
-`
 
 const PrintPortfolioButton = styled(ExternalLink)`
   display: inline-block;
