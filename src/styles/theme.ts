@@ -3,9 +3,7 @@ export const lightTheme = {
   textReversed: 'var(--pink)',
   gradientColour: 'linear-gradient(hsla( 0, 0%, 100%, .2), hsla( 0, 0%, 100%, 1), hsla( 0, 0%, 100%, .3))',
 
-	// containerColor:,
-	// siteBG: ,
-  
+	// containerColor:, 
 
 }
 

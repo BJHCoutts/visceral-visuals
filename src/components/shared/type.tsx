@@ -34,7 +34,7 @@ export const ExternalLink = styled.a.attrs(() => ({
 
 export const Header = styled.h1`
   color: var(--text-colour);
-  margin-bottom: 1.5em;
+  margin-bottom: .8em;
   font: 600 3rem/130% var(--display-font);
 `
 
@@ -60,4 +60,14 @@ export const SubHeader = styled.h2`
 
 export const SubHeaderCenter = styled(SubHeader)`
 	text-align: center;
+`
+
+export const BodyTextP = styled.p`
+  margin-bottom: .6em;
+  line-height: 1.6em;
+  font: 400 1.1rem/1.6em var(--body-font);
+  color: var(--text-colour);
+`
+
+export const BodyTextContainer = styled.section`
 `
