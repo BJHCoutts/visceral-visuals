@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { fadeIn } from "./animations"
 import { breakPoints } from "./break-points"
 
 export const BannerContainer = styled.section`
@@ -20,6 +21,7 @@ export const SectionContainer = styled.section`
 	display: grid;
 	grid-template-columns: var(--grid);
 	padding: var(--section-padding-mobile);
+	animation: ${fadeIn} 1s ease-in;
 	@media (min-width: ${breakPoints.tablet}) {
 		padding: var(--section-padding-desktop);
 	}

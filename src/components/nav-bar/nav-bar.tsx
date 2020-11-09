@@ -1,23 +1,39 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
 export const NavBar:React.FC = () => {
 
-  const scrollTo = (id:string) => {
-    const el = document.getElementById(id)
-      el? el.scrollIntoView({behavior: "smooth"})
-      :null
-  }
+  // const scrollTo = (id:string) => {
+  //   const el = document.getElementById(id)
+  //     el? el.scrollIntoView({behavior: "smooth"})
+  //     :null
+  // }
 
 	return(
 		<NavBarContainer>
 			<NavList>
         <NavItem 
-          onClick={() => scrollTo("images")}
-        >Images</NavItem>
+          // onClick={() => scrollTo("home")}
+        >
+          <Link to='/'>
+            Home
+          </Link>
+        </NavItem>
         <NavItem 
-          onClick={() => scrollTo("websites")}
-        >Websites (wip)</NavItem>
+          // onClick={() => scrollTo("images")}
+        >
+          <Link to='/images'>
+            Images
+          </Link>
+        </NavItem>
+        <NavItem 
+          // onClick={() => scrollTo("websites")}
+        >
+          <Link to='/websites'>
+            Websites
+          </Link>
+        </NavItem>
 			</NavList>
 		</NavBarContainer>
 	)

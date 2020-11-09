@@ -1,11 +1,12 @@
-import * as React from "react"
-import styled, { keyframes } from "styled-components"
+import React from "react"
+import styled from "styled-components"
 
 import VVLogo from "../../logos/VVLogoGearsFeather.svg"
 import VVLogoDarkMode from "../../logos/VVGearsFeatherLogoDarkMode.svg"
 import { SectionContainer, SectionContent } from "../shared/containers"
 import { breakPoints } from "../shared/break-points"
 import { Button } from "../shared/forms"
+import { fadeIn } from "../shared/animations"
 
 interface IProps {
   theme: string
@@ -35,18 +36,13 @@ const DarkThemeButton = styled(Button)`
   text-transform: lowercase;
 `
 
-const fadeIn = keyframes`
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-`
-
 const HeaderContainer = styled(SectionContainer)`
   background-image: var(--gradient-colour);
   overflow-x: hidden;
+  padding: .5em 0 3.5em;
+  @media (min-width: ${breakPoints.tablet}) {
+    padding: 1em 0 5em;
+  }
 `
 
 const HeaderContent = styled(SectionContent)`

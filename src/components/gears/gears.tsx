@@ -1,8 +1,9 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import cog from '../../icons/cog.png'
 import cogDarkMode from '../../icons/cogDarkMode.png'
 import { Context } from '../context/context'
+import { fadeIn } from '../shared/animations'
 
 interface IProps {
 	theme: string
@@ -22,15 +23,6 @@ export const Gears:React.FC<IProps> = ({theme}) => {
 		</Context.Consumer>		
 	)
 }
-
-	const fadeIn = keyframes`
-		0%{
-			opacity: 0;
-		}
-		100%{
-			opacity: 1;
-		}
-	`
 
 interface ICog {
 	rotation: number
