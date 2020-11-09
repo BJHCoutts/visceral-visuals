@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,11 +14,26 @@ export const NavBar:React.FC = () => {
 		<NavBarContainer>
 			<NavList>
         <NavItem 
+          onClick={() => scrollTo("home")}
+        >
+          <Link to='/'>
+            Home
+          </Link>
+        </NavItem>
+        <NavItem 
           onClick={() => scrollTo("images")}
-        >Images</NavItem>
+        >
+          <Link to='/images'>
+            Images
+          </Link>
+        </NavItem>
         <NavItem 
           onClick={() => scrollTo("websites")}
-        >Websites (wip)</NavItem>
+        >
+          <Link to='/websites'>
+            Websites
+          </Link>
+        </NavItem>
 			</NavList>
 		</NavBarContainer>
 	)
