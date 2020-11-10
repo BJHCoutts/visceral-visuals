@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import { Button, HeaderToggleButton } from '../shared/forms'
 import { Modal } from '../shared/modal/modal'
 import { breakPoints } from '../shared/break-points'
+import { scrollToId } from '../../custom-hooks/scroll-to-id'
 
 interface IProps {
 	title: string
@@ -14,7 +15,7 @@ interface IButton {
 	onClick: Function
 }
 
-export const Carousel:React.FC<IProps> = (props) => {
+export const Carousel:React.FC<IProps> = ({children, title}) => {
 	const [currentSlide, setCurrentSlide] = React.useState(0)
 	const [open, setOpen] = React.useState(false)
 	const [active, setActive] = React.useState(false)
@@ -24,7 +25,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 		setActive(!active)
 	}
 
-	const activeSlide = props.children.map((slide, i) =>
+	const activeSlide = children.map((slide, i) =>
 		<CarouselSlide key={i} active={currentSlide === i} >
 			<SlideContainer onClick={toggleModal} onKeyDown={toggleModal}>
 				<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
@@ -32,26 +33,22 @@ export const Carousel:React.FC<IProps> = (props) => {
 		</CarouselSlide>
 	)
 
-	const smoothScroll = (id:string) => {
-		document.getElementById(id)!.scrollIntoView({ behavior: "smooth"})
-	}
-
 	const handleHeaderClick = (id:string) => {
 		setOpen(!open)
-		smoothScroll(id)
+		scrollToId(id)
 	}
 
 	const handleThumbnailClick = (i) => {
 		setCurrentSlide(i)
-		smoothScroll(props.title)
+		scrollToId(title)
 	}
 	
 	return(
 		<>
 			<Modal active={active} toggleModal={toggleModal}>
-				<ModalImg fluid={props.children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
+				<ModalImg fluid={children[currentSlide].node.childImageSharp.fluid} imgStyle={{objectFit:"contain"}}/>
 			</Modal>
-			<ResponsiveHeaderToggleButton onClick={()=>handleHeaderClick(props.title)} open={open} id={props.title}>
+			<ResponsiveHeaderToggleButton onClick={()=>handleHeaderClick(title)} open={open} id={title}>
 				{open ? 'hide images' : 'view images'}
 			</ResponsiveHeaderToggleButton>
 			<ContainerMain open={open}>
@@ -73,7 +70,7 @@ export const Carousel:React.FC<IProps> = (props) => {
 				</ContainerTop>
 
 				<ThumbnailConatiner>
-					{props.children.map((thumbnail, i) =>
+					{children.map((thumbnail, i) =>
 						<div key={i} onClick={()=>handleThumbnailClick(i)} onKeyDown={()=>setCurrentSlide(i)} >
 							<Thumbnail  key={i} fluid={thumbnail.node.childImageSharp.fluid} active={currentSlide === i} imgStyle={{objectFit: "cover"}} onClick={()=>handleThumbnailClick(i)} onKeyDown={()=>setCurrentSlide(i)} 
 							/>

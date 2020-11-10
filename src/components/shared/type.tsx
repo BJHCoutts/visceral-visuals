@@ -51,10 +51,10 @@ export const HR = styled.hr`
 
 export const SubHeader = styled.h2`
   font: 600 2.4rem/120% var(--display-font);
-  margin-bottom: 1.4em;
+  margin-bottom: .8em;
   color: var(--text-colour);
   @media (min-width: ${breakPoints.tablet}){
-    margin-bottom: 1.6em;
+    margin-bottom: .8em;
   }
 `
 
@@ -70,6 +70,7 @@ export const BodyTextP = styled.p`
 `
 
 export const BodyTextContainer = styled.section`
+  margin-bottom: 5em;
 `
 
 export const LinkButton = styled(Header)`
