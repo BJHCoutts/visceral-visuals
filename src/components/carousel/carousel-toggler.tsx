@@ -17,7 +17,7 @@ interface IProps {
 export const CarouselToggler:React.FC<IProps> = ({galleryTitle, setDigital, setAnalogue, children}) => {
 	
 	return(
-		<ImageNavBar id="images">
+		<ImageNavBar>
 			<ImageNavList>
 				<ImageNavItemDigital 
 					onClick = {setDigital}
@@ -44,15 +44,21 @@ const ImageNavItemDigital = styled.li`
 	width:100%;
 	text-align:center;
 	cursor: pointer;
+	border: solid 1px ${(props) => props.active === 'Digital' ? 'var(--black)' : 'var(--white)'};
+	border-bottom: none;
 `
 
 const ImageNavItemAnalogue = styled.li`
 	color: ${(props) => props.active === 'Analogue' ? 'var(--black)' : 'var(--white)'};
 	background-color: ${(props) => props.active === 'Analogue' ? 'var(--white)' : 'var(--black)'};
+	border-width: 1px;
+	border-color: ${(props) => props.active === 'Analogue' ? 'var(--black)' : 'var(--white)'};
 	font: 400 1.5rem/2rem var(--display-font);
 	width:100%;
 	text-align:center;
 	cursor: pointer;
+	border: solid 1px ${(props) => props.active === 'Analogue' ? 'var(--black)' : 'var(--white)'};
+	border-bottom: none;
 `
 
 const ImageNavBar = styled.nav`
