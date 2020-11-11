@@ -39,7 +39,8 @@ export const GlobalStyle = createGlobalStyle`
 
 		--text-colour: ${({theme}) => theme.textColour};
 		--text-reversed: ${({theme}) => theme.textReversed};
-		--gradient-colour: ${({theme}) => theme.gradientColour};
+		--gradient-colour-horizontal: ${({theme}) => theme.gradientColourHorizontal};
+		--gradient-colour-vertical: ${({theme}) => theme.gradientColourVertical};
 		/* --container:  */
 		
 	}
