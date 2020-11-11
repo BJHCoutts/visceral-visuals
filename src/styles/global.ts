@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+	/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inria+Sans:wght@700&display=swap'); */
+
+	/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'); */
 export const GlobalStyle = createGlobalStyle`
 
-	@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inria+Sans:wght@700&display=swap');
 
 	:root {
 		--display-font: 'Amatic SC', cursive;

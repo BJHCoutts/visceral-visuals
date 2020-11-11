@@ -25,13 +25,17 @@ export const Carousel:React.FC<IProps> = ({children, title}) => {
 		setActive(!active)
 	}
 
-	const activeSlide = children.map((slide, i) =>
-		<CarouselSlide key={i} active={currentSlide === i} >
-			<SlideContainer onClick={toggleModal} onKeyDown={toggleModal}>
-				<SlideImg key={i} fluid={slide.node.childImageSharp.fluid} imgStyle={{	objectFit: "contain"}}/>
-			</SlideContainer>
-		</CarouselSlide>
-	)
+	const activeSlide = children.map((slide, i) => {
+		const {id, fluid} = slide.node.childImageSharp
+		
+		return(
+			<CarouselSlide key={i} active={currentSlide === i} >
+				<SlideContainer onClick={toggleModal} onKeyDown={toggleModal}>
+					<SlideImg key={id} fluid={fluid} imgStyle={{	objectFit: "contain"}}/>
+				</SlideContainer>
+			</CarouselSlide>
+		)
+	})
 
 	const handleHeaderClick = (id:string) => {
 		setOpen(!open)
