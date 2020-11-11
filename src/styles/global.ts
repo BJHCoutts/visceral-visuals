@@ -30,10 +30,10 @@ export const GlobalStyle = createGlobalStyle`
 		--wide: 1200px;
 		
 		--grid: minmax(15px, 1fr) minmax(0, 80%) minmax(15px, 1fr);
-		--banner-padding-mobile: 1.5em 0 2em 0;
-		--banner-padding-desktop: 2.5em 0 3em 0;
-		--section-padding-mobile: 2em 0 1em 0;
-		--section-padding-desktop: 6em 0 8em 0;
+		--banner-padding-mobile: 1.5em 0 2em;
+		--banner-padding-desktop: 2.5em 0 3em;
+		--section-padding-mobile: 4em 0 4em;
+		--section-padding-desktop: 6em 0 8em;
 		
 		--shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.3);
 
