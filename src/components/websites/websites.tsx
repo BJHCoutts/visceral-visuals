@@ -10,7 +10,7 @@ interface IProps {
 export const Websites:React.FC<IProps> = () => {
 
 	const websites = websiteList.map( ({name, imagePath, url, description}:IWebsite) => (
-		<WebsiteCard name={name} imagePath={imagePath} url={url}>
+		<WebsiteCard name={name} imagePath={imagePath} url={url} key={name}>
 			{description}
 		</WebsiteCard>
 	))

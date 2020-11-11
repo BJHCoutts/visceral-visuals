@@ -18,11 +18,39 @@ export const Head: React.FC<Props> = (props) => {
       }
     }
   `)
-  return <Helmet 
-    title={`${props.title} | ${data.site.siteMetadata.title}`} 
-    link={[ { rel: "shortcut icon", type: "image/png", href: `${faviconPath}` },
+  // return <Helmet 
+  //   title={`${props.title} | ${data.site.siteMetadata.title}`} 
+  //   link={[ { rel: "shortcut icon", type: "image/png", href: `${faviconPath}` },
     
-  ]}/>
+  // ]}/>
+  return(
+    <Helmet>
+      {/* General tags */}
+      <title>
+        {`${props.title} | ${data.site.siteMetadata.title}`}
+      </title>
+      <link rel="shortcut icon" type="image/png" href={`${faviconPath}`} />
+      {/* <meta name="description" content={description} />
+      <meta name="image" content={image} />
+      <link rel="canonical" href={url} /> */}
+      <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"/>
+   
+      {/* OpenGraph tags */}
+      {/* <meta property="og:url" content={url} />
+      {isBlogPost ? <meta property="og:type" content="article" /> : null}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="fb:app_id" content={seo.social.fbAppID} /> */}
+
+      {/* Twitter Card tags */}
+      {/* <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={seo.social.twitter} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} /> */}
+    </Helmet>
+  )
 
 }
 

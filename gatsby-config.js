@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Visceral Visuals by Brian Coutts`,
-    description: `Visceral Visuals by Brian Coutts, art, design and illustration`,
+    description: `Visceral Visuals by Brian Coutts. A playground for my code and a gallery for my images.`,
     author: `Brian Coutts`,
     phoneDisplay: `CHANGME`,
     phoneLink: `CHANGME`,

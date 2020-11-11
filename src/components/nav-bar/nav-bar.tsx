@@ -4,32 +4,20 @@ import styled from 'styled-components'
 
 export const NavBar:React.FC = () => {
 
-  // const scrollTo = (id:string) => {
-  //   const el = document.getElementById(id)
-  //     el? el.scrollIntoView({behavior: "smooth"})
-  //     :null
-  // }
-
 	return(
 		<NavBarContainer>
 			<NavList>
-        <NavItem 
-          // onClick={() => scrollTo("home")}
-        >
+        <NavItem>
           <Link to='/'>
             Home
           </Link>
         </NavItem>
-        <NavItem 
-          // onClick={() => scrollTo("images")}
-        >
+        <NavItem>
           <Link to='/images'>
             Images
           </Link>
         </NavItem>
-        <NavItem 
-          // onClick={() => scrollTo("websites")}
-        >
+        <NavItem>
           <Link to='/websites'>
             Websites
           </Link>

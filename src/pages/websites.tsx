@@ -18,7 +18,7 @@ const WebsitesPage: React.FC = () => {
       <Layout>
 				<SectionContainer>
 					<SectionContent>
-						<Header>Websites</Header>
+						<Header>Websites (page design is wip)</Header>
 						<Websites/>
 					</SectionContent>
 				</SectionContainer>
