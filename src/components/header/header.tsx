@@ -46,7 +46,7 @@ const DarkThemeButton = styled(Button)`
 `
 
 const HeaderContainer = styled(SectionContainer)`
-  background-image: var(--gradient-colour);
+  background-image: var(--gradient-colour-horizontal);
   overflow-x: hidden;
   padding: .5em 0 3.5em;
   @media (min-width: ${breakPoints.tablet}) {

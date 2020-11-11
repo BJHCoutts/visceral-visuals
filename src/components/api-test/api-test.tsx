@@ -14,7 +14,7 @@ export const APITest:React.FC = () => {
 			const res = await fetch('https://icanhazdadjoke.com', settings)
 			const data = await res.json()
 			return setDadJoke(data.joke)
-		})().catch(err=>console.log(err))
+		})().catch(err=>console.error(err))
 	},[])
 
 	return(

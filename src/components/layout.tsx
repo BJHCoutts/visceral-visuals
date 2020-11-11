@@ -65,7 +65,7 @@ const Content = styled.div`
 `
 
 const LayoutContainer = styled.div`
-  background-image: var(--gradient-colour);
+  background-image: var(--gradient-colour-vertical);
 `
 
 const ParallaxBgImg = styled(BackgroundImage)`
